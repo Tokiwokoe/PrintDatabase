@@ -4,6 +4,7 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog, QTableWidgetItem
 from UIclass import AdminWindow
 
 
+# Класс вывода данных из БД в таблицу
 class PrintTable(QMainWindow):
     def __init__(self):
         super(PrintTable, self).__init__()
@@ -19,13 +20,30 @@ class PrintTable(QMainWindow):
         i = 0
         self.tableWidget.resizeColumnsToContents()
 
+    def to_print_print(self):
+        self.cursor = connection.connection.cursor()
+        query = 'SELECT name, "PropertyType".property, "District".district, address, phone, year FROM "Print" ' \
+                'LEFT JOIN "District" ON "District".id = "Print".district ' \
+                'LEFT JOIN "PropertyType" ON "PropertyType".id = "Print".property ' \
+                'ORDER BY "Print".id'
+        self.cursor.execute(query)
+        self.rows = self.cursor.fetchall()
+        self.tableWidget.setRowCount(len(self.rows))
+        self.tableWidget.setColumnCount(6)
+        self.labels = ['Название типографии', 'Тип собственности', 'Район', 'Адрес', 'Телефон', 'Год открытия']
+        self.tableWidget.setHorizontalHeaderLabels(self.labels)
+        self.to_print_table()
 
+
+# Класс главного окна
 class AdminWindow(PrintTable, AdminWindow.Ui_MainWindow):
     def __init__(self):
+        """ Установка интерфейса, фиксация размера и соединение кнопок с функциями"""
         super(AdminWindow, self).__init__()
         self.setupUi(self)
         self.setFixedSize(860, 1000)
         self.Print_print.clicked.connect(self.to_print_print)
+        """
         self.Print_customer.clicked.connect(self.to_print_customer)
         self.Print_product.clicked.connect(self.to_print_product)
         self.Print_format.clicked.connect(self.to_print_format)
@@ -59,4 +77,13 @@ class AdminWindow(PrintTable, AdminWindow.Ui_MainWindow):
         self.add_format.clicked.connect(self.to_add_format)
         self.add_prod_type.clicked.connect(self.to_add_prod_type)
         self.add_prod_name.clicked.connect(self.to_add_prod_name)
-        self.DeleteButton.clicked.connect(self.to_delete)
+        self.DeleteButton.clicked.connect(self.to_delete)"""
+
+
+# Запуск программы
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    window = AdminWindow()
+
+    window.show()
+    sys.exit(app.exec_())

@@ -1045,7 +1045,7 @@ background-color: rgb(245, 245, 245)</string>
      <string>Д</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="add_prop_type">
+   <widget class="QPushButton" name="add_prod_type">
     <property name="geometry">
      <rect>
       <x>330</x>
