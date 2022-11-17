@@ -117,6 +117,226 @@ class PrintTable(QMainWindow):
         self.tableWidget.setHorizontalHeaderLabels(self.labels)
         self.to_print_table()
 
+    def to_print_Q_3_8_1(self):
+        self.cursor = connection.connection.cursor()
+        query = 'SELECT name, "District".district, year, phone FROM "Print" ' \
+                'INNER JOIN "District" ON "District".id = "Print".district ' \
+                'WHERE "Print".id > 3'
+        self.cursor.execute(query)
+        self.rows = self.cursor.fetchall()
+        self.tableWidget.setRowCount(len(self.rows))
+        self.tableWidget.setColumnCount(4)
+        self.labels = ['Название типографии', 'Район', 'Год открытия', 'Телефон']
+        self.tableWidget.setHorizontalHeaderLabels(self.labels)
+        self.to_print_table()
+
+    def to_print_Q_3_8_2(self):
+        self.cursor = connection.connection.cursor()
+        query = 'SELECT name, "District".district, year, phone FROM "Print" ' \
+                'INNER JOIN "District" ON "District".id = "Print".district ' \
+                'WHERE "District".id > 1'
+        self.cursor.execute(query)
+        self.rows = self.cursor.fetchall()
+        self.tableWidget.setRowCount(len(self.rows))
+        self.tableWidget.setColumnCount(4)
+        self.labels = ['Название типографии', 'Район', 'Год открытия', 'Телефон']
+        self.tableWidget.setHorizontalHeaderLabels(self.labels)
+        self.to_print_table()
+
+    def to_print_Q_3_8_3(self):
+        self.cursor = connection.connection.cursor()
+        query = 'SELECT name, date_start FROM "Order" ' \
+                'INNER JOIN "Customer" ON "Customer".id = "Order".client ' \
+                'WHERE birthday BETWEEN \'15.05.1997\' AND \'29.12.2000\''
+        self.cursor.execute(query)
+        self.rows = self.cursor.fetchall()
+        self.tableWidget.setRowCount(len(self.rows))
+        self.tableWidget.setColumnCount(2)
+        self.labels = ['ФИО', 'Дата заказа']
+        self.tableWidget.setHorizontalHeaderLabels(self.labels)
+        self.to_print_table()
+
+    def to_print_Q_3_8_4(self):
+        self.cursor = connection.connection.cursor()
+        query = 'SELECT name, date_start FROM "Order" ' \
+                'INNER JOIN "Customer" ON "Customer".id = "Order".client ' \
+                'WHERE date_start > \'01.01.2014\''
+        self.cursor.execute(query)
+        self.rows = self.cursor.fetchall()
+        self.tableWidget.setRowCount(len(self.rows))
+        self.tableWidget.setColumnCount(2)
+        self.labels = ['ФИО', 'Дата заказа']
+        self.tableWidget.setHorizontalHeaderLabels(self.labels)
+        self.to_print_table()
+
+    def to_print_Q_3_8_5(self):
+        self.cursor = connection.connection.cursor()
+        query = 'SELECT name, phone, "PropertyType".property FROM "Print" ' \
+                'INNER JOIN "PropertyType" ON "PropertyType".id = "Print".property'
+        self.cursor.execute(query)
+        self.rows = self.cursor.fetchall()
+        self.tableWidget.setRowCount(len(self.rows))
+        self.tableWidget.setColumnCount(3)
+        self.labels = ['Название типографии', 'Телефон', 'Тип собственности']
+        self.tableWidget.setHorizontalHeaderLabels(self.labels)
+        self.to_print_table()
+
+    def to_print_Q_3_8_6(self):
+        self.cursor = connection.connection.cursor()
+        query = 'SELECT name, "Order".id FROM "Customer" ' \
+                'INNER JOIN "Order" ON "Order".client = "Customer".id'
+        self.cursor.execute(query)
+        self.rows = self.cursor.fetchall()
+        self.tableWidget.setRowCount(len(self.rows))
+        self.tableWidget.setColumnCount(2)
+        self.labels = ['ФИО', 'ID заказа']
+        self.tableWidget.setHorizontalHeaderLabels(self.labels)
+        self.to_print_table()
+
+    def to_print_Q_3_8_7(self):
+        self.cursor = connection.connection.cursor()
+        query = 'SELECT name, "District".district, address FROM "Print" ' \
+                'INNER JOIN "District" ON "District".id = "Print".district'
+        self.cursor.execute(query)
+        self.rows = self.cursor.fetchall()
+        self.tableWidget.setRowCount(len(self.rows))
+        self.tableWidget.setColumnCount(3)
+        self.labels = ['Название типографии', 'Район', 'Адрес']
+        self.tableWidget.setHorizontalHeaderLabels(self.labels)
+        self.to_print_table()
+
+    def to_print_Q_3_8_8(self):
+        self.cursor = connection.connection.cursor()
+        query = 'SELECT name, "Order".id FROM "Customer" ' \
+                'LEFT JOIN "Order" ON "Order".client = "Customer".id'
+        self.cursor.execute(query)
+        self.rows = self.cursor.fetchall()
+        self.tableWidget.setRowCount(len(self.rows))
+        self.tableWidget.setColumnCount(2)
+        self.labels = ['ФИО', 'ID заказа']
+        self.tableWidget.setHorizontalHeaderLabels(self.labels)
+        self.to_print_table()
+
+    def to_print_Q_3_8_9(self):
+        self.cursor = connection.connection.cursor()
+        query = 'SELECT name, "Order".id FROM "Customer" ' \
+                'RIGHT JOIN "Order" ON "Order".client = "Customer".id'
+        self.cursor.execute(query)
+        self.rows = self.cursor.fetchall()
+        self.tableWidget.setRowCount(len(self.rows))
+        self.tableWidget.setColumnCount(2)
+        self.labels = ['ФИО', 'ID заказа']
+        self.tableWidget.setHorizontalHeaderLabels(self.labels)
+        self.to_print_table()
+
+    def to_print_Q_3_8_10(self):
+        self.cursor = connection.connection.cursor()
+        query = 'SELECT "Print".id, name, "District".district FROM "Print" ' \
+                'LEFT JOIN "District" ON "District".id = "Print".district ' \
+                'WHERE "District".district = ' \
+                '(SELECT DISTINCT district FROM "District" WHERE district LIKE \'В%\')'
+        self.cursor.execute(query)
+        self.rows = self.cursor.fetchall()
+        self.tableWidget.setRowCount(len(self.rows))
+        self.tableWidget.setColumnCount(3)
+        self.labels = ['ID типографии', 'Название типографии', 'Район']
+        self.tableWidget.setHorizontalHeaderLabels(self.labels)
+        self.to_print_table()
+
+    def to_print_Q_3_9_1(self):
+        self.cursor = connection.connection.cursor()
+        query = 'SELECT cleaning_name, SUM(price) AS total_price FROM "Cleaning" ' \
+                'LEFT JOIN "Cleaningservice" ON "Cleaningservice".cleaning_id = "Cleaning".id ' \
+                'GROUP BY cleaning_name ' \
+                'ORDER BY total_price DESC'
+        self.cursor.execute(query)
+        self.rows = self.cursor.fetchall()
+        self.tableWidget.setRowCount(len(self.rows))
+        self.tableWidget.setColumnCount(2)
+        self.labels = ['Название химчистки', 'Сумма стоимости всех услуг']
+        self.tableWidget.setHorizontalHeaderLabels(self.labels)
+        self.to_print_table()
+
+    def to_print_Q_3_9_2(self):
+        self.cursor = connection.connection.cursor()
+        query = 'SELECT cleaning_name, SUM(price) AS total_price FROM "Cleaning" ' \
+                'LEFT JOIN "Cleaningservice" ON "Cleaningservice".cleaning_id = "Cleaning".id ' \
+                'WHERE cleaning_name NOT LIKE \'К%\' GROUP BY cleaning_name ' \
+                'ORDER BY total_price DESC'
+        self.cursor.execute(query)
+        self.rows = self.cursor.fetchall()
+        self.tableWidget.setRowCount(len(self.rows))
+        self.tableWidget.setColumnCount(2)
+        self.labels = ['Название химчистки', 'Сумма стоимости всех услуг']
+        self.tableWidget.setHorizontalHeaderLabels(self.labels)
+        self.to_print_table()
+
+    def to_print_Q_3_9_3(self):
+        self.cursor = connection.connection.cursor()
+        query = 'SELECT cleaning_name, SUM(price) AS total_price FROM "Cleaning" ' \
+                'LEFT JOIN "Cleaningservice" ON "Cleaningservice".cleaning_id = "Cleaning".id ' \
+                'GROUP BY cleaning_name ' \
+                'HAVING SUM(price) > 2500 ' \
+                'ORDER BY total_price DESC'
+        self.cursor.execute(query)
+        self.rows = self.cursor.fetchall()
+        self.tableWidget.setRowCount(len(self.rows))
+        self.tableWidget.setColumnCount(2)
+        self.labels = ['Название химчистки', 'Сумма стоимости всех услуг']
+        self.tableWidget.setHorizontalHeaderLabels(self.labels)
+        self.to_print_table()
+
+    def to_print_Q_3_9_4(self):
+        self.cursor = connection.connection.cursor()
+        query = 'SELECT cleaning_name, SUM(price) AS total_price FROM "Cleaning" ' \
+                'LEFT JOIN "Cleaningservice" ON "Cleaningservice".cleaning_id = "Cleaning".id ' \
+                'WHERE cleaning_name NOT LIKE \'К%\' ' \
+                'GROUP BY cleaning_name ' \
+                'HAVING SUM(price) < 4000 ' \
+                'ORDER BY total_price DESC'
+        self.cursor.execute(query)
+        self.rows = self.cursor.fetchall()
+        self.tableWidget.setRowCount(len(self.rows))
+        self.tableWidget.setColumnCount(2)
+        self.labels = ['Название химчистки', 'Сумма стоимости всех услуг']
+        self.tableWidget.setHorizontalHeaderLabels(self.labels)
+        self.to_print_table()
+
+    def to_print_Q_3_9_5(self):
+        self.cursor = connection.connection.cursor()
+        query = 'SELECT "Customer".id, COUNT("Order".id) AS order_count FROM "Customer" ' \
+                'LEFT JOIN "Order" ON "Order".customer_id = "Customer".id ' \
+                'GROUP BY "Customer".id ' \
+                'HAVING COUNT("Order".id) = ' \
+                '(SELECT COUNT("Order".id) AS order_count FROM "Customer" ' \
+                'GROUP BY order_count ' \
+                'HAVING COUNT("Order".id) = 1) ' \
+                'LIMIT 10'
+        self.cursor.execute(query)
+        self.rows = self.cursor.fetchall()
+        self.tableWidget.setRowCount(len(self.rows))
+        self.tableWidget.setColumnCount(2)
+        self.labels = ['ID заказчика', 'Количество заказов']
+        self.tableWidget.setHorizontalHeaderLabels(self.labels)
+        self.to_print_table()
+
+    def to_print_Q_3_9_6(self):
+        self.cursor = connection.connection.cursor()
+        query = 'SELECT cleaning_name, service, price FROM "Cleaningservice" ' \
+                'LEFT JOIN "Cleaning" ON "Cleaning".id = "Cleaningservice".cleaning_id ' \
+                'LEFT JOIN "Service" ON "Service".id = "Cleaningservice".service_id ' \
+                'WHERE EXISTS ' \
+                '(SELECT "Service".id FROM "Service" ' \
+                'WHERE "Cleaningservice".cleaning_id = 2) ' \
+                'ORDER BY price DESC'
+        self.cursor.execute(query)
+        self.rows = self.cursor.fetchall()
+        self.tableWidget.setRowCount(len(self.rows))
+        self.tableWidget.setColumnCount(3)
+        self.labels = ['Название химчистки', 'Услуга', 'Стоимость']
+        self.tableWidget.setHorizontalHeaderLabels(self.labels)
+        self.to_print_table()
+
 
 # Класс главного окна
 class AdminWindow(PrintTable, AdminWindow.Ui_MainWindow):
@@ -133,7 +353,6 @@ class AdminWindow(PrintTable, AdminWindow.Ui_MainWindow):
         self.Print_order.clicked.connect(self.to_print_order)
         self.Print_prop.clicked.connect(self.to_print_prop)
         self.Print_prod_type.clicked.connect(self.to_print_prod_type)
-        """
         self.Q_3_8_1.clicked.connect(self.to_print_Q_3_8_1)
         self.Q_3_8_2.clicked.connect(self.to_print_Q_3_8_2)
         self.Q_3_8_3.clicked.connect(self.to_print_Q_3_8_3)
@@ -150,6 +369,7 @@ class AdminWindow(PrintTable, AdminWindow.Ui_MainWindow):
         self.Q_3_9_4.clicked.connect(self.to_print_Q_3_9_4)
         self.Q_3_9_5.clicked.connect(self.to_print_Q_3_9_5)
         self.Q_3_9_6.clicked.connect(self.to_print_Q_3_9_6)
+        """
         self.add_customer.clicked.connect(self.to_add_customer)
         self.add_order.clicked.connect(self.to_add_order)
         self.add_print.clicked.connect(self.to_add_print)

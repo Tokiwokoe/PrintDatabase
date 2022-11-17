@@ -42,7 +42,7 @@ background-color: rgb(245, 245, 245)</string>
     <property name="geometry">
      <rect>
       <x>230</x>
-      <y>520</y>
+      <y>550</y>
       <width>50</width>
       <height>30</height>
      </rect>
@@ -60,7 +60,7 @@ background-color: rgb(245, 245, 245)</string>
     <property name="geometry">
      <rect>
       <x>230</x>
-      <y>570</y>
+      <y>600</y>
       <width>50</width>
       <height>30</height>
      </rect>
@@ -78,7 +78,7 @@ background-color: rgb(245, 245, 245)</string>
     <property name="geometry">
      <rect>
       <x>230</x>
-      <y>720</y>
+      <y>750</y>
       <width>50</width>
       <height>30</height>
      </rect>
@@ -96,7 +96,7 @@ background-color: rgb(245, 245, 245)</string>
     <property name="geometry">
      <rect>
       <x>230</x>
-      <y>770</y>
+      <y>800</y>
       <width>50</width>
       <height>30</height>
      </rect>
@@ -114,7 +114,7 @@ background-color: rgb(245, 245, 245)</string>
     <property name="geometry">
      <rect>
       <x>230</x>
-      <y>820</y>
+      <y>850</y>
       <width>50</width>
       <height>30</height>
      </rect>
@@ -132,7 +132,7 @@ background-color: rgb(245, 245, 245)</string>
     <property name="geometry">
      <rect>
       <x>230</x>
-      <y>620</y>
+      <y>650</y>
       <width>50</width>
       <height>30</height>
      </rect>
@@ -311,7 +311,7 @@ background-color: rgb(245, 245, 245)</string>
     <property name="geometry">
      <rect>
       <x>780</x>
-      <y>430</y>
+      <y>440</y>
       <width>41</width>
       <height>31</height>
      </rect>
@@ -539,7 +539,7 @@ background-color: rgb(245, 245, 245)</string>
     <property name="geometry">
      <rect>
       <x>330</x>
-      <y>570</y>
+      <y>600</y>
       <width>50</width>
       <height>30</height>
      </rect>
@@ -557,7 +557,7 @@ background-color: rgb(245, 245, 245)</string>
     <property name="geometry">
      <rect>
       <x>330</x>
-      <y>620</y>
+      <y>650</y>
       <width>50</width>
       <height>30</height>
      </rect>
@@ -605,7 +605,7 @@ font: &quot;Arial Black&quot;;</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>520</y>
+      <y>550</y>
       <width>181</width>
       <height>30</height>
      </rect>
@@ -635,7 +635,7 @@ font: &quot;Arial Black&quot;;</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>570</y>
+      <y>600</y>
       <width>181</width>
       <height>30</height>
      </rect>
@@ -665,7 +665,7 @@ font: &quot;Arial Black&quot;;</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>620</y>
+      <y>650</y>
       <width>181</width>
       <height>30</height>
      </rect>
@@ -695,7 +695,7 @@ font: &quot;Arial Black&quot;;</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>720</y>
+      <y>750</y>
       <width>181</width>
       <height>30</height>
      </rect>
@@ -725,7 +725,7 @@ font: &quot;Arial Black&quot;;</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>770</y>
+      <y>800</y>
       <width>181</width>
       <height>30</height>
      </rect>
@@ -755,7 +755,7 @@ font: &quot;Arial Black&quot;;</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>820</y>
+      <y>850</y>
       <width>181</width>
       <height>30</height>
      </rect>
@@ -785,7 +785,7 @@ font: &quot;Arial Black&quot;;</string>
     <property name="geometry">
      <rect>
       <x>330</x>
-      <y>520</y>
+      <y>550</y>
       <width>50</width>
       <height>30</height>
      </rect>
@@ -803,7 +803,7 @@ background-color: rgb(245, 245, 245)</string>
     <property name="geometry">
      <rect>
       <x>330</x>
-      <y>720</y>
+      <y>750</y>
       <width>50</width>
       <height>30</height>
      </rect>
@@ -821,7 +821,7 @@ background-color: rgb(245, 245, 245)</string>
     <property name="geometry">
      <rect>
       <x>330</x>
-      <y>770</y>
+      <y>800</y>
       <width>50</width>
       <height>30</height>
      </rect>
@@ -839,7 +839,7 @@ background-color: rgb(245, 245, 245)</string>
     <property name="geometry">
      <rect>
       <x>330</x>
-      <y>820</y>
+      <y>850</y>
       <width>50</width>
       <height>30</height>
      </rect>
@@ -857,7 +857,7 @@ background-color: rgb(245, 245, 245)</string>
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>400</y>
+      <y>410</y>
       <width>41</width>
       <height>31</height>
      </rect>
@@ -875,7 +875,7 @@ background-color: rgb(245, 245, 245)</string>
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>460</y>
+      <y>470</y>
       <width>41</width>
       <height>31</height>
      </rect>
@@ -893,7 +893,7 @@ background-color: rgb(245, 245, 245)</string>
     <property name="geometry">
      <rect>
       <x>90</x>
-      <y>400</y>
+      <y>410</y>
       <width>141</width>
       <height>31</height>
      </rect>
@@ -923,7 +923,7 @@ font: &quot;Arial Black&quot;;</string>
     <property name="geometry">
      <rect>
       <x>90</x>
-      <y>460</y>
+      <y>470</y>
       <width>141</width>
       <height>31</height>
      </rect>
@@ -953,7 +953,7 @@ font: &quot;Arial Black&quot;;</string>
     <property name="geometry">
      <rect>
       <x>240</x>
-      <y>400</y>
+      <y>410</y>
       <width>161</width>
       <height>31</height>
      </rect>
@@ -971,7 +971,7 @@ background-color: rgb(245, 245, 245)</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>870</y>
+      <y>900</y>
       <width>181</width>
       <height>30</height>
      </rect>
@@ -997,59 +997,11 @@ font: &quot;Arial Black&quot;;</string>
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QLabel" name="label_17">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>920</y>
-      <width>181</width>
-      <height>30</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>-1</pointsize>
-      <weight>50</weight>
-      <italic>false</italic>
-      <bold>false</bold>
-      <underline>false</underline>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(0, 0, 0);
-font-size: 20px;
-font: &quot;Arial Black&quot;;</string>
-    </property>
-    <property name="text">
-     <string>Название изделия</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="add_prod_name">
-    <property name="geometry">
-     <rect>
-      <x>330</x>
-      <y>920</y>
-      <width>50</width>
-      <height>30</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font-size: 16px;
-font: &quot;Yu Gothic UI Semibold&quot;;
-background-color: rgb(245, 245, 245)</string>
-    </property>
-    <property name="text">
-     <string>Д</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="add_prod_type">
     <property name="geometry">
      <rect>
       <x>330</x>
-      <y>870</y>
+      <y>900</y>
       <width>50</width>
       <height>30</height>
      </rect>
@@ -1061,31 +1013,13 @@ background-color: rgb(245, 245, 245)</string>
     </property>
     <property name="text">
      <string>Д</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="Print_prod_name">
-    <property name="geometry">
-     <rect>
-      <x>230</x>
-      <y>920</y>
-      <width>50</width>
-      <height>30</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font-size: 16px;
-font: &quot;Yu Gothic UI Semibold&quot;;
-background-color: rgb(245, 245, 245)</string>
-    </property>
-    <property name="text">
-     <string>П</string>
     </property>
    </widget>
    <widget class="QPushButton" name="Print_prod_type">
     <property name="geometry">
      <rect>
       <x>230</x>
-      <y>870</y>
+      <y>900</y>
       <width>50</width>
       <height>30</height>
      </rect>
@@ -1103,7 +1037,7 @@ background-color: rgb(245, 245, 245)</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>670</y>
+      <y>700</y>
       <width>181</width>
       <height>30</height>
      </rect>
@@ -1133,7 +1067,7 @@ font: &quot;Arial Black&quot;;</string>
     <property name="geometry">
      <rect>
       <x>330</x>
-      <y>670</y>
+      <y>700</y>
       <width>50</width>
       <height>30</height>
      </rect>
@@ -1151,7 +1085,7 @@ background-color: rgb(245, 245, 245)</string>
     <property name="geometry">
      <rect>
       <x>230</x>
-      <y>670</y>
+      <y>700</y>
       <width>50</width>
       <height>30</height>
      </rect>
