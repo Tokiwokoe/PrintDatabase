@@ -2,6 +2,7 @@ import sys
 import connection
 from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog, QTableWidgetItem
 from UIclass import AdminWindow
+from AddClass import AddClient, AddDistrict, AddProperty, AddPrint, AddFormat, AddOrder, AddProduct, AddProductType
 
 
 # Класс вывода данных из БД в таблицу
@@ -83,15 +84,15 @@ class PrintTable(QMainWindow):
 
     def to_print_order(self):
         self.cursor = connection.connection.cursor()
-        query = 'SELECT "Customer".name, "Product".publication, date_start, date_plan, date_fact, cost, comment ' \
+        query = 'SELECT "Customer".name, "Product".publication, date_start, date_plan, date_fact, cost ' \
                 'FROM "Order" ' \
                 'LEFT JOIN "Product" ON "Product".id = "Order".product ' \
                 'LEFT JOIN "Customer" ON "Customer".id = "Order".client ORDER BY "Order".id'
         self.cursor.execute(query)
         self.rows = self.cursor.fetchall()
         self.tableWidget.setRowCount(len(self.rows))
-        self.tableWidget.setColumnCount(7)
-        self.labels = ['ФИО заказчика', 'Название изделия', 'Дата взятия заказа', 'Дата завершения (план)', 'Дата завершения (факт)', 'Аванс', 'Доп. информация']
+        self.tableWidget.setColumnCount(6)
+        self.labels = ['ФИО заказчика', 'Название изделия', 'Дата взятия заказа', 'Дата завершения (план)', 'Дата завершения (факт)', 'Аванс']
         self.tableWidget.setHorizontalHeaderLabels(self.labels)
         self.to_print_table()
 
@@ -160,7 +161,7 @@ class PrintTable(QMainWindow):
         self.cursor = connection.connection.cursor()
         query = 'SELECT name, date_start FROM "Order" ' \
                 'INNER JOIN "Customer" ON "Customer".id = "Order".client ' \
-                'WHERE date_start > \'01.01.2014\''
+                'WHERE date_start < \'01.01.2000\''
         self.cursor.execute(query)
         self.rows = self.cursor.fetchall()
         self.tableWidget.setRowCount(len(self.rows))
@@ -253,7 +254,7 @@ class PrintTable(QMainWindow):
         self.rows = self.cursor.fetchall()
         self.tableWidget.setRowCount(len(self.rows))
         self.tableWidget.setColumnCount(2)
-        self.labels = ['ФИО', 'Сумма всех авансов']
+        self.labels = ['ФИО', 'Количество заказов']
         self.tableWidget.setHorizontalHeaderLabels(self.labels)
         self.to_print_table()
 
@@ -267,7 +268,7 @@ class PrintTable(QMainWindow):
         self.rows = self.cursor.fetchall()
         self.tableWidget.setRowCount(len(self.rows))
         self.tableWidget.setColumnCount(2)
-        self.labels = ['ФИО', 'Сумма всех авансов']
+        self.labels = ['ФИО', 'Количество заказов']
         self.tableWidget.setHorizontalHeaderLabels(self.labels)
         self.to_print_table()
 
@@ -282,7 +283,7 @@ class PrintTable(QMainWindow):
         self.rows = self.cursor.fetchall()
         self.tableWidget.setRowCount(len(self.rows))
         self.tableWidget.setColumnCount(2)
-        self.labels = ['ФИО', 'Сумма всех авансов']
+        self.labels = ['ФИО', 'Количество заказов']
         self.tableWidget.setHorizontalHeaderLabels(self.labels)
         self.to_print_table()
 
@@ -298,7 +299,7 @@ class PrintTable(QMainWindow):
         self.rows = self.cursor.fetchall()
         self.tableWidget.setRowCount(len(self.rows))
         self.tableWidget.setColumnCount(2)
-        self.labels = ['ФИО', 'Сумма всех авансов']
+        self.labels = ['ФИО', 'Количество заказов']
         self.tableWidget.setHorizontalHeaderLabels(self.labels)
         self.to_print_table()
 
@@ -369,17 +370,50 @@ class AdminWindow(PrintTable, AdminWindow.Ui_MainWindow):
         self.Q_3_9_4.clicked.connect(self.to_print_Q_3_9_4)
         self.Q_3_9_5.clicked.connect(self.to_print_Q_3_9_5)
         self.Q_3_9_6.clicked.connect(self.to_print_Q_3_9_6)
-        """
         self.add_customer.clicked.connect(self.to_add_customer)
-        self.add_order.clicked.connect(self.to_add_order)
-        self.add_print.clicked.connect(self.to_add_print)
         self.add_dist.clicked.connect(self.to_add_dist)
-        self.add_product.clicked.connect(self.to_add_product)
         self.add_prop.clicked.connect(self.to_add_prop)
+        self.add_print.clicked.connect(self.to_add_print)
         self.add_format.clicked.connect(self.to_add_format)
+        self.add_order.clicked.connect(self.to_add_order)
+        self.add_product.clicked.connect(self.to_add_product)
         self.add_prod_type.clicked.connect(self.to_add_prod_type)
-        self.add_prod_name.clicked.connect(self.to_add_prod_name)
+        """
         self.DeleteButton.clicked.connect(self.to_delete)"""
+
+
+    def to_add_customer(self):
+        client = AddClient()
+        client.exec_()
+
+    def to_add_dist(self):
+        dist = AddDistrict()
+        dist.exec_()
+
+    def to_add_prop(self):
+        prop = AddProperty()
+        prop.exec_()
+
+
+    def to_add_print(self):
+        print = AddPrint()
+        print.exec_()
+
+    def to_add_format(self):
+        format = AddFormat()
+        format.exec_()
+
+    def to_add_order(self):
+        order = AddOrder()
+        order.exec_()
+
+    def to_add_product(self):
+        prod = AddProduct()
+        prod.exec_()
+
+    def to_add_prod_type(self):
+        prod_type = AddProductType()
+        prod_type.exec_()
 
 
 # Запуск программы
