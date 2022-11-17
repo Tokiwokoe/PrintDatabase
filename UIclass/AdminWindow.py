@@ -404,38 +404,18 @@ class Ui_MainWindow(object):
 "font: \"Arial Black\";")
         self.label_16.setAlignment(QtCore.Qt.AlignCenter)
         self.label_16.setObjectName("label_16")
-        self.label_17 = QtWidgets.QLabel(self.centralwidget)
-        self.label_17.setGeometry(QtCore.QRect(10, 920, 181, 30))
         font = QtGui.QFont()
         font.setPointSize(-1)
         font.setBold(False)
         font.setItalic(False)
         font.setUnderline(False)
         font.setWeight(50)
-        self.label_17.setFont(font)
-        self.label_17.setStyleSheet("color: rgb(0, 0, 0);\n"
-"font-size: 20px;\n"
-"font: \"Arial Black\";")
-        self.label_17.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_17.setObjectName("label_17")
-        self.add_prod_name = QtWidgets.QPushButton(self.centralwidget)
-        self.add_prod_name.setGeometry(QtCore.QRect(330, 920, 50, 30))
-        self.add_prod_name.setStyleSheet("font-size: 16px;\n"
-"font: \"Yu Gothic UI Semibold\";\n"
-"background-color: rgb(245, 245, 245)")
-        self.add_prod_name.setObjectName("add_prod_name")
         self.add_prod_type = QtWidgets.QPushButton(self.centralwidget)
         self.add_prod_type.setGeometry(QtCore.QRect(330, 870, 50, 30))
         self.add_prod_type.setStyleSheet("font-size: 16px;\n"
 "font: \"Yu Gothic UI Semibold\";\n"
 "background-color: rgb(245, 245, 245)")
         self.add_prod_type.setObjectName("add_prod_type")
-        self.Print_prod_name = QtWidgets.QPushButton(self.centralwidget)
-        self.Print_prod_name.setGeometry(QtCore.QRect(230, 920, 50, 30))
-        self.Print_prod_name.setStyleSheet("font-size: 16px;\n"
-"font: \"Yu Gothic UI Semibold\";\n"
-"background-color: rgb(245, 245, 245)")
-        self.Print_prod_name.setObjectName("Print_prod_name")
         self.Print_prod_type = QtWidgets.QPushButton(self.centralwidget)
         self.Print_prod_type.setGeometry(QtCore.QRect(230, 870, 50, 30))
         self.Print_prod_type.setStyleSheet("font-size: 16px;\n"
@@ -527,10 +507,7 @@ class Ui_MainWindow(object):
         self.label_15.setText(_translate("MainWindow", "- добавить"))
         self.DeleteButton.setText(_translate("MainWindow", "Удалить запись"))
         self.label_16.setText(_translate("MainWindow", "Вид изделия"))
-        self.label_17.setText(_translate("MainWindow", "Название изделия"))
-        self.add_prod_name.setText(_translate("MainWindow", "Д"))
         self.add_prod_type.setText(_translate("MainWindow", "Д"))
-        self.Print_prod_name.setText(_translate("MainWindow", "П"))
         self.Print_prod_type.setText(_translate("MainWindow", "П"))
         self.label_11.setText(_translate("MainWindow", "Формат листов"))
         self.add_format.setText(_translate("MainWindow", "Д"))
