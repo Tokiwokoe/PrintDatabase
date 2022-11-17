@@ -245,67 +245,67 @@ class PrintTable(QMainWindow):
 
     def to_print_Q_3_9_1(self):
         self.cursor = connection.connection.cursor()
-        query = 'SELECT cleaning_name, SUM(price) AS total_price FROM "Cleaning" ' \
-                'LEFT JOIN "Cleaningservice" ON "Cleaningservice".cleaning_id = "Cleaning".id ' \
-                'GROUP BY cleaning_name ' \
-                'ORDER BY total_price DESC'
+        query = 'SELECT name, COUNT("Order".id) AS total_orders FROM "Customer" ' \
+                'LEFT JOIN "Order" ON "Order".client = "Customer".id ' \
+                'GROUP BY name ' \
+                'ORDER BY total_orders DESC'
         self.cursor.execute(query)
         self.rows = self.cursor.fetchall()
         self.tableWidget.setRowCount(len(self.rows))
         self.tableWidget.setColumnCount(2)
-        self.labels = ['Название химчистки', 'Сумма стоимости всех услуг']
+        self.labels = ['ФИО', 'Сумма всех авансов']
         self.tableWidget.setHorizontalHeaderLabels(self.labels)
         self.to_print_table()
 
     def to_print_Q_3_9_2(self):
         self.cursor = connection.connection.cursor()
-        query = 'SELECT cleaning_name, SUM(price) AS total_price FROM "Cleaning" ' \
-                'LEFT JOIN "Cleaningservice" ON "Cleaningservice".cleaning_id = "Cleaning".id ' \
-                'WHERE cleaning_name NOT LIKE \'К%\' GROUP BY cleaning_name ' \
-                'ORDER BY total_price DESC'
+        query = 'SELECT name, COUNT("Order".id) AS total_orders FROM "Customer" ' \
+                'LEFT JOIN "Order" ON "Order".client = "Customer".id ' \
+                'WHERE name LIKE \'К%\' GROUP BY name ' \
+                'ORDER BY total_orders DESC'
         self.cursor.execute(query)
         self.rows = self.cursor.fetchall()
         self.tableWidget.setRowCount(len(self.rows))
         self.tableWidget.setColumnCount(2)
-        self.labels = ['Название химчистки', 'Сумма стоимости всех услуг']
+        self.labels = ['ФИО', 'Сумма всех авансов']
         self.tableWidget.setHorizontalHeaderLabels(self.labels)
         self.to_print_table()
 
     def to_print_Q_3_9_3(self):
         self.cursor = connection.connection.cursor()
-        query = 'SELECT cleaning_name, SUM(price) AS total_price FROM "Cleaning" ' \
-                'LEFT JOIN "Cleaningservice" ON "Cleaningservice".cleaning_id = "Cleaning".id ' \
-                'GROUP BY cleaning_name ' \
-                'HAVING SUM(price) > 2500 ' \
-                'ORDER BY total_price DESC'
+        query = 'SELECT name, COUNT("Order".id) AS total_orders FROM "Customer" ' \
+                'LEFT JOIN "Order" ON "Order".client = "Customer".id ' \
+                'GROUP BY name ' \
+                'HAVING COUNT("Order".id) > 1 ' \
+                'ORDER BY total_orders DESC'
         self.cursor.execute(query)
         self.rows = self.cursor.fetchall()
         self.tableWidget.setRowCount(len(self.rows))
         self.tableWidget.setColumnCount(2)
-        self.labels = ['Название химчистки', 'Сумма стоимости всех услуг']
+        self.labels = ['ФИО', 'Сумма всех авансов']
         self.tableWidget.setHorizontalHeaderLabels(self.labels)
         self.to_print_table()
 
     def to_print_Q_3_9_4(self):
         self.cursor = connection.connection.cursor()
-        query = 'SELECT cleaning_name, SUM(price) AS total_price FROM "Cleaning" ' \
-                'LEFT JOIN "Cleaningservice" ON "Cleaningservice".cleaning_id = "Cleaning".id ' \
-                'WHERE cleaning_name NOT LIKE \'К%\' ' \
-                'GROUP BY cleaning_name ' \
-                'HAVING SUM(price) < 4000 ' \
-                'ORDER BY total_price DESC'
+        query = 'SELECT name, COUNT("Order".id) AS total_orders FROM "Customer" ' \
+                'LEFT JOIN "Order" ON "Order".client = "Customer".id ' \
+                'WHERE name LIKE \'К%\' ' \
+                'GROUP BY name ' \
+                'HAVING COUNT("Order".id) < 2 ' \
+                'ORDER BY total_orders DESC'
         self.cursor.execute(query)
         self.rows = self.cursor.fetchall()
         self.tableWidget.setRowCount(len(self.rows))
         self.tableWidget.setColumnCount(2)
-        self.labels = ['Название химчистки', 'Сумма стоимости всех услуг']
+        self.labels = ['ФИО', 'Сумма всех авансов']
         self.tableWidget.setHorizontalHeaderLabels(self.labels)
         self.to_print_table()
 
     def to_print_Q_3_9_5(self):
         self.cursor = connection.connection.cursor()
         query = 'SELECT "Customer".id, COUNT("Order".id) AS order_count FROM "Customer" ' \
-                'LEFT JOIN "Order" ON "Order".customer_id = "Customer".id ' \
+                'LEFT JOIN "Order" ON "Order".client = "Customer".id ' \
                 'GROUP BY "Customer".id ' \
                 'HAVING COUNT("Order".id) = ' \
                 '(SELECT COUNT("Order".id) AS order_count FROM "Customer" ' \
@@ -322,18 +322,18 @@ class PrintTable(QMainWindow):
 
     def to_print_Q_3_9_6(self):
         self.cursor = connection.connection.cursor()
-        query = 'SELECT cleaning_name, service, price FROM "Cleaningservice" ' \
-                'LEFT JOIN "Cleaning" ON "Cleaning".id = "Cleaningservice".cleaning_id ' \
-                'LEFT JOIN "Service" ON "Service".id = "Cleaningservice".service_id ' \
+        query = 'SELECT name, publication, price FROM "Product" ' \
+                'LEFT JOIN "Order" ON "Order".product = "Product".id ' \
+                'LEFT JOIN "Customer" ON "Customer".id = "Order".client ' \
                 'WHERE EXISTS ' \
-                '(SELECT "Service".id FROM "Service" ' \
-                'WHERE "Cleaningservice".cleaning_id = 2) ' \
+                '(SELECT name FROM "Customer" ' \
+                'WHERE "Customer".id = 2) ' \
                 'ORDER BY price DESC'
         self.cursor.execute(query)
         self.rows = self.cursor.fetchall()
         self.tableWidget.setRowCount(len(self.rows))
         self.tableWidget.setColumnCount(3)
-        self.labels = ['Название химчистки', 'Услуга', 'Стоимость']
+        self.labels = ['ФИО', 'Название изделия', 'Стоимость']
         self.tableWidget.setHorizontalHeaderLabels(self.labels)
         self.to_print_table()
 
