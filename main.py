@@ -1,6 +1,8 @@
 import sys
 import connection
 from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog, QTableWidgetItem
+
+from DeleteClass import DeleteData
 from UIclass import AdminWindow
 from AddClass import AddClient, AddDistrict, AddProperty, AddPrint, AddFormat, AddOrder, AddProduct, AddProductType
 
@@ -378,8 +380,7 @@ class AdminWindow(PrintTable, AdminWindow.Ui_MainWindow):
         self.add_order.clicked.connect(self.to_add_order)
         self.add_product.clicked.connect(self.to_add_product)
         self.add_prod_type.clicked.connect(self.to_add_prod_type)
-        """
-        self.DeleteButton.clicked.connect(self.to_delete)"""
+        self.DeleteButton.clicked.connect(self.to_delete)
 
 
     def to_add_customer(self):
@@ -414,6 +415,10 @@ class AdminWindow(PrintTable, AdminWindow.Ui_MainWindow):
     def to_add_prod_type(self):
         prod_type = AddProductType()
         prod_type.exec_()
+
+    def to_delete(self):
+        delete = DeleteData()
+        delete.exec_()
 
 
 # Запуск программы
