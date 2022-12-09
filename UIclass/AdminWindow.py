@@ -14,13 +14,13 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(860, 1000)
+        MainWindow.resize(1050, 1000)
         MainWindow.setStyleSheet("background-color: rgb(245, 245, 175)")
         MainWindow.setIconSize(QtCore.QSize(24, 24))
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.tableWidget = QtWidgets.QTableWidget(self.centralwidget)
-        self.tableWidget.setGeometry(QtCore.QRect(0, 0, 861, 321))
+        self.tableWidget.setGeometry(QtCore.QRect(0, 0, 1051, 321))
         self.tableWidget.setStyleSheet("font-size: 16px;\n"
 "font: \"Yu Gothic UI Semibold\";\n"
 "background-color: rgb(245, 245, 245)")
@@ -28,75 +28,71 @@ class Ui_MainWindow(object):
         self.tableWidget.setColumnCount(0)
         self.tableWidget.setRowCount(0)
         self.Print_print = QtWidgets.QPushButton(self.centralwidget)
-        self.Print_print.setGeometry(QtCore.QRect(230, 550, 50, 30))
+        self.Print_print.setGeometry(QtCore.QRect(230, 550, 80, 30))
         self.Print_print.setStyleSheet("font-size: 16px;\n"
 "font: \"Yu Gothic UI Semibold\";\n"
 "background-color: rgb(245, 245, 245)")
         self.Print_print.setObjectName("Print_print")
         self.Print_customer = QtWidgets.QPushButton(self.centralwidget)
-        self.Print_customer.setGeometry(QtCore.QRect(230, 600, 50, 30))
+        self.Print_customer.setGeometry(QtCore.QRect(230, 600, 80, 30))
         self.Print_customer.setStyleSheet("font-size: 16px;\n"
 "font: \"Yu Gothic UI Semibold\";\n"
 "background-color: rgb(245, 245, 245)")
         self.Print_customer.setObjectName("Print_customer")
         self.Print_order = QtWidgets.QPushButton(self.centralwidget)
-        self.Print_order.setGeometry(QtCore.QRect(230, 750, 50, 30))
+        self.Print_order.setGeometry(QtCore.QRect(230, 750, 80, 30))
         self.Print_order.setStyleSheet("font-size: 16px;\n"
 "font: \"Yu Gothic UI Semibold\";\n"
 "background-color: rgb(245, 245, 245)")
         self.Print_order.setObjectName("Print_order")
         self.Print_dist = QtWidgets.QPushButton(self.centralwidget)
-        self.Print_dist.setGeometry(QtCore.QRect(230, 800, 50, 30))
+        self.Print_dist.setGeometry(QtCore.QRect(230, 800, 80, 30))
         self.Print_dist.setStyleSheet("font-size: 16px;\n"
 "font: \"Yu Gothic UI Semibold\";\n"
 "background-color: rgb(245, 245, 245)")
         self.Print_dist.setObjectName("Print_dist")
         self.Print_prop = QtWidgets.QPushButton(self.centralwidget)
-        self.Print_prop.setGeometry(QtCore.QRect(230, 850, 50, 30))
+        self.Print_prop.setGeometry(QtCore.QRect(230, 850, 80, 30))
         self.Print_prop.setStyleSheet("font-size: 16px;\n"
 "font: \"Yu Gothic UI Semibold\";\n"
 "background-color: rgb(245, 245, 245)")
         self.Print_prop.setObjectName("Print_prop")
         self.Print_product = QtWidgets.QPushButton(self.centralwidget)
-        self.Print_product.setGeometry(QtCore.QRect(230, 650, 50, 30))
+        self.Print_product.setGeometry(QtCore.QRect(230, 650, 80, 30))
         self.Print_product.setStyleSheet("font-size: 16px;\n"
 "font: \"Yu Gothic UI Semibold\";\n"
 "background-color: rgb(245, 245, 245)")
         self.Print_product.setObjectName("Print_product")
         self.Q_3_8_8 = QtWidgets.QPushButton(self.centralwidget)
-        self.Q_3_8_8.setGeometry(QtCore.QRect(430, 580, 401, 31))
+        self.Q_3_8_8.setGeometry(QtCore.QRect(640, 580, 401, 31))
         font = QtGui.QFont()
         font.setPointSize(-1)
         font.setBold(False)
         font.setItalic(False)
-        font.setUnderline(False)
         font.setWeight(50)
-        font.setStrikeOut(False)
-        font.setKerning(True)
         self.Q_3_8_8.setFont(font)
         self.Q_3_8_8.setStyleSheet("font-size: 16px;\n"
 "font: \"Yu Gothic UI Semibold\";\n"
 "background-color: rgb(245, 245, 245)")
         self.Q_3_8_8.setObjectName("Q_3_8_8")
         self.Q_3_8_9 = QtWidgets.QPushButton(self.centralwidget)
-        self.Q_3_8_9.setGeometry(QtCore.QRect(430, 620, 401, 31))
+        self.Q_3_8_9.setGeometry(QtCore.QRect(640, 620, 401, 31))
         self.Q_3_8_9.setStyleSheet("font-size: 16px;\n"
 "font: \"Yu Gothic UI Semibold\";\n"
 "background-color: rgb(245, 245, 245)")
         self.Q_3_8_9.setObjectName("Q_3_8_9")
         self.Q_3_8_10 = QtWidgets.QPushButton(self.centralwidget)
-        self.Q_3_8_10.setGeometry(QtCore.QRect(430, 660, 401, 31))
+        self.Q_3_8_10.setGeometry(QtCore.QRect(640, 660, 401, 31))
         self.Q_3_8_10.setStyleSheet("font-size: 16px;\n"
 "font: \"Yu Gothic UI Semibold\";\n"
 "background-color: rgb(245, 245, 245)")
         self.Q_3_8_10.setObjectName("Q_3_8_10")
         self.label_5 = QtWidgets.QLabel(self.centralwidget)
-        self.label_5.setGeometry(QtCore.QRect(440, 480, 381, 31))
+        self.label_5.setGeometry(QtCore.QRect(650, 480, 381, 31))
         font = QtGui.QFont()
         font.setPointSize(-1)
         font.setBold(False)
         font.setItalic(False)
-        font.setUnderline(False)
         font.setWeight(50)
         self.label_5.setFont(font)
         self.label_5.setStyleSheet("color: rgb(0, 0, 0);\n"
@@ -105,18 +101,17 @@ class Ui_MainWindow(object):
         self.label_5.setAlignment(QtCore.Qt.AlignCenter)
         self.label_5.setObjectName("label_5")
         self.Q_3_8_7 = QtWidgets.QPushButton(self.centralwidget)
-        self.Q_3_8_7.setGeometry(QtCore.QRect(670, 520, 41, 31))
+        self.Q_3_8_7.setGeometry(QtCore.QRect(880, 520, 41, 31))
         self.Q_3_8_7.setStyleSheet("font-size: 16px;\n"
 "font: \"Yu Gothic UI Semibold\";\n"
 "background-color: rgb(245, 245, 245)")
         self.Q_3_8_7.setObjectName("Q_3_8_7")
         self.label_6 = QtWidgets.QLabel(self.centralwidget)
-        self.label_6.setGeometry(QtCore.QRect(440, 330, 381, 51))
+        self.label_6.setGeometry(QtCore.QRect(650, 330, 381, 51))
         font = QtGui.QFont()
         font.setPointSize(-1)
         font.setBold(False)
         font.setItalic(False)
-        font.setUnderline(True)
         font.setWeight(50)
         self.label_6.setFont(font)
         self.label_6.setStyleSheet("color: rgb(0, 0, 0);\n"
@@ -125,36 +120,35 @@ class Ui_MainWindow(object):
         self.label_6.setAlignment(QtCore.Qt.AlignCenter)
         self.label_6.setObjectName("label_6")
         self.Q_3_8_1 = QtWidgets.QPushButton(self.centralwidget)
-        self.Q_3_8_1.setGeometry(QtCore.QRect(450, 440, 41, 31))
+        self.Q_3_8_1.setGeometry(QtCore.QRect(660, 440, 41, 31))
         self.Q_3_8_1.setStyleSheet("font-size: 16px;\n"
 "font: \"Yu Gothic UI Semibold\";\n"
 "background-color: rgb(245, 245, 245)")
         self.Q_3_8_1.setObjectName("Q_3_8_1")
         self.Q_3_8_4 = QtWidgets.QPushButton(self.centralwidget)
-        self.Q_3_8_4.setGeometry(QtCore.QRect(780, 440, 41, 31))
+        self.Q_3_8_4.setGeometry(QtCore.QRect(990, 440, 41, 31))
         self.Q_3_8_4.setStyleSheet("font-size: 16px;\n"
 "font: \"Yu Gothic UI Semibold\";\n"
 "background-color: rgb(245, 245, 245)")
         self.Q_3_8_4.setObjectName("Q_3_8_4")
         self.Q_3_8_6 = QtWidgets.QPushButton(self.centralwidget)
-        self.Q_3_8_6.setGeometry(QtCore.QRect(560, 520, 41, 31))
+        self.Q_3_8_6.setGeometry(QtCore.QRect(770, 520, 41, 31))
         self.Q_3_8_6.setStyleSheet("font-size: 16px;\n"
 "font: \"Yu Gothic UI Semibold\";\n"
 "background-color: rgb(245, 245, 245)")
         self.Q_3_8_6.setObjectName("Q_3_8_6")
         self.Q_3_8_5 = QtWidgets.QPushButton(self.centralwidget)
-        self.Q_3_8_5.setGeometry(QtCore.QRect(450, 520, 41, 31))
+        self.Q_3_8_5.setGeometry(QtCore.QRect(660, 520, 41, 31))
         self.Q_3_8_5.setStyleSheet("font-size: 16px;\n"
 "font: \"Yu Gothic UI Semibold\";\n"
 "background-color: rgb(245, 245, 245)")
         self.Q_3_8_5.setObjectName("Q_3_8_5")
         self.label_7 = QtWidgets.QLabel(self.centralwidget)
-        self.label_7.setGeometry(QtCore.QRect(440, 389, 381, 41))
+        self.label_7.setGeometry(QtCore.QRect(650, 389, 381, 41))
         font = QtGui.QFont()
         font.setPointSize(-1)
         font.setBold(False)
         font.setItalic(False)
-        font.setUnderline(False)
         font.setWeight(50)
         self.label_7.setFont(font)
         self.label_7.setStyleSheet("color: rgb(0, 0, 0);\n"
@@ -163,72 +157,71 @@ class Ui_MainWindow(object):
         self.label_7.setAlignment(QtCore.Qt.AlignCenter)
         self.label_7.setObjectName("label_7")
         self.Q_3_8_3 = QtWidgets.QPushButton(self.centralwidget)
-        self.Q_3_8_3.setGeometry(QtCore.QRect(670, 440, 41, 31))
+        self.Q_3_8_3.setGeometry(QtCore.QRect(880, 440, 41, 31))
         self.Q_3_8_3.setStyleSheet("font-size: 16px;\n"
 "font: \"Yu Gothic UI Semibold\";\n"
 "background-color: rgb(245, 245, 245)")
         self.Q_3_8_3.setObjectName("Q_3_8_3")
         self.Q_3_8_2 = QtWidgets.QPushButton(self.centralwidget)
-        self.Q_3_8_2.setGeometry(QtCore.QRect(560, 440, 41, 31))
+        self.Q_3_8_2.setGeometry(QtCore.QRect(770, 440, 41, 31))
         self.Q_3_8_2.setStyleSheet("font-size: 16px;\n"
 "font: \"Yu Gothic UI Semibold\";\n"
 "background-color: rgb(245, 245, 245)")
         self.Q_3_8_2.setObjectName("Q_3_8_2")
         self.Q_3_9_1 = QtWidgets.QPushButton(self.centralwidget)
-        self.Q_3_9_1.setGeometry(QtCore.QRect(430, 700, 401, 31))
+        self.Q_3_9_1.setGeometry(QtCore.QRect(640, 700, 401, 31))
         self.Q_3_9_1.setStyleSheet("font-size: 16px;\n"
 "font: \"Yu Gothic UI Semibold\";\n"
 "background-color: rgb(245, 245, 245)")
         self.Q_3_9_1.setObjectName("Q_3_9_1")
         self.Q_3_9_3 = QtWidgets.QPushButton(self.centralwidget)
-        self.Q_3_9_3.setGeometry(QtCore.QRect(430, 780, 401, 31))
+        self.Q_3_9_3.setGeometry(QtCore.QRect(640, 780, 401, 31))
         self.Q_3_9_3.setStyleSheet("font-size: 16px;\n"
 "font: \"Yu Gothic UI Semibold\";\n"
 "background-color: rgb(245, 245, 245)")
         self.Q_3_9_3.setObjectName("Q_3_9_3")
         self.Q_3_9_2 = QtWidgets.QPushButton(self.centralwidget)
-        self.Q_3_9_2.setGeometry(QtCore.QRect(430, 740, 401, 31))
+        self.Q_3_9_2.setGeometry(QtCore.QRect(640, 740, 401, 31))
         self.Q_3_9_2.setStyleSheet("font-size: 16px;\n"
 "font: \"Yu Gothic UI Semibold\";\n"
 "background-color: rgb(245, 245, 245)")
         self.Q_3_9_2.setObjectName("Q_3_9_2")
         self.Q_3_9_4 = QtWidgets.QPushButton(self.centralwidget)
-        self.Q_3_9_4.setGeometry(QtCore.QRect(430, 820, 401, 31))
+        self.Q_3_9_4.setGeometry(QtCore.QRect(640, 820, 401, 31))
         self.Q_3_9_4.setStyleSheet("font-size: 16px;\n"
 "font: \"Yu Gothic UI Semibold\";\n"
 "background-color: rgb(245, 245, 245)")
         self.Q_3_9_4.setObjectName("Q_3_9_4")
         self.Q_3_9_6 = QtWidgets.QPushButton(self.centralwidget)
-        self.Q_3_9_6.setGeometry(QtCore.QRect(430, 900, 401, 31))
+        self.Q_3_9_6.setGeometry(QtCore.QRect(640, 900, 401, 31))
         self.Q_3_9_6.setStyleSheet("font-size: 16px;\n"
 "font: \"Yu Gothic UI Semibold\";\n"
 "background-color: rgb(245, 245, 245)")
         self.Q_3_9_6.setObjectName("Q_3_9_6")
         self.Q_3_9_5 = QtWidgets.QPushButton(self.centralwidget)
-        self.Q_3_9_5.setGeometry(QtCore.QRect(430, 860, 401, 31))
+        self.Q_3_9_5.setGeometry(QtCore.QRect(640, 860, 401, 31))
         self.Q_3_9_5.setStyleSheet("font-size: 16px;\n"
 "font: \"Yu Gothic UI Semibold\";\n"
 "background-color: rgb(245, 245, 245)")
         self.Q_3_9_5.setObjectName("Q_3_9_5")
         self.add_customer = QtWidgets.QPushButton(self.centralwidget)
-        self.add_customer.setGeometry(QtCore.QRect(330, 600, 50, 30))
+        self.add_customer.setGeometry(QtCore.QRect(370, 600, 80, 30))
         self.add_customer.setStyleSheet("font-size: 16px;\n"
 "font: \"Yu Gothic UI Semibold\";\n"
 "background-color: rgb(245, 245, 245)")
         self.add_customer.setObjectName("add_customer")
         self.add_product = QtWidgets.QPushButton(self.centralwidget)
-        self.add_product.setGeometry(QtCore.QRect(330, 650, 50, 30))
+        self.add_product.setGeometry(QtCore.QRect(370, 650, 80, 30))
         self.add_product.setStyleSheet("font-size: 16px;\n"
 "font: \"Yu Gothic UI Semibold\";\n"
 "background-color: rgb(245, 245, 245)")
         self.add_product.setObjectName("add_product")
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
-        self.label_2.setGeometry(QtCore.QRect(10, 330, 411, 51))
+        self.label_2.setGeometry(QtCore.QRect(10, 330, 581, 51))
         font = QtGui.QFont()
         font.setPointSize(-1)
         font.setBold(False)
         font.setItalic(False)
-        font.setUnderline(False)
         font.setWeight(50)
         self.label_2.setFont(font)
         self.label_2.setStyleSheet("color: rgb(0, 0, 0);\n"
@@ -242,7 +235,6 @@ class Ui_MainWindow(object):
         font.setPointSize(-1)
         font.setBold(False)
         font.setItalic(False)
-        font.setUnderline(False)
         font.setWeight(50)
         self.label_3.setFont(font)
         self.label_3.setStyleSheet("color: rgb(0, 0, 0);\n"
@@ -256,7 +248,6 @@ class Ui_MainWindow(object):
         font.setPointSize(-1)
         font.setBold(False)
         font.setItalic(False)
-        font.setUnderline(False)
         font.setWeight(50)
         self.label_4.setFont(font)
         self.label_4.setStyleSheet("color: rgb(0, 0, 0);\n"
@@ -270,7 +261,6 @@ class Ui_MainWindow(object):
         font.setPointSize(-1)
         font.setBold(False)
         font.setItalic(False)
-        font.setUnderline(False)
         font.setWeight(50)
         self.label_8.setFont(font)
         self.label_8.setStyleSheet("color: rgb(0, 0, 0);\n"
@@ -284,7 +274,6 @@ class Ui_MainWindow(object):
         font.setPointSize(-1)
         font.setBold(False)
         font.setItalic(False)
-        font.setUnderline(False)
         font.setWeight(50)
         self.label_9.setFont(font)
         self.label_9.setStyleSheet("color: rgb(0, 0, 0);\n"
@@ -298,7 +287,6 @@ class Ui_MainWindow(object):
         font.setPointSize(-1)
         font.setBold(False)
         font.setItalic(False)
-        font.setUnderline(False)
         font.setWeight(50)
         self.label_10.setFont(font)
         self.label_10.setStyleSheet("color: rgb(0, 0, 0);\n"
@@ -312,7 +300,6 @@ class Ui_MainWindow(object):
         font.setPointSize(-1)
         font.setBold(False)
         font.setItalic(False)
-        font.setUnderline(False)
         font.setWeight(50)
         self.label_12.setFont(font)
         self.label_12.setStyleSheet("color: rgb(0, 0, 0);\n"
@@ -321,25 +308,25 @@ class Ui_MainWindow(object):
         self.label_12.setAlignment(QtCore.Qt.AlignCenter)
         self.label_12.setObjectName("label_12")
         self.add_print = QtWidgets.QPushButton(self.centralwidget)
-        self.add_print.setGeometry(QtCore.QRect(330, 550, 50, 30))
+        self.add_print.setGeometry(QtCore.QRect(370, 550, 80, 30))
         self.add_print.setStyleSheet("font-size: 16px;\n"
 "font: \"Yu Gothic UI Semibold\";\n"
 "background-color: rgb(245, 245, 245)")
         self.add_print.setObjectName("add_print")
         self.add_order = QtWidgets.QPushButton(self.centralwidget)
-        self.add_order.setGeometry(QtCore.QRect(330, 750, 50, 30))
+        self.add_order.setGeometry(QtCore.QRect(370, 750, 80, 30))
         self.add_order.setStyleSheet("font-size: 16px;\n"
 "font: \"Yu Gothic UI Semibold\";\n"
 "background-color: rgb(245, 245, 245)")
         self.add_order.setObjectName("add_order")
         self.add_dist = QtWidgets.QPushButton(self.centralwidget)
-        self.add_dist.setGeometry(QtCore.QRect(330, 800, 50, 30))
+        self.add_dist.setGeometry(QtCore.QRect(370, 800, 80, 30))
         self.add_dist.setStyleSheet("font-size: 16px;\n"
 "font: \"Yu Gothic UI Semibold\";\n"
 "background-color: rgb(245, 245, 245)")
         self.add_dist.setObjectName("add_dist")
         self.add_prop = QtWidgets.QPushButton(self.centralwidget)
-        self.add_prop.setGeometry(QtCore.QRect(330, 850, 50, 30))
+        self.add_prop.setGeometry(QtCore.QRect(370, 850, 80, 30))
         self.add_prop.setStyleSheet("font-size: 16px;\n"
 "font: \"Yu Gothic UI Semibold\";\n"
 "background-color: rgb(245, 245, 245)")
@@ -362,7 +349,6 @@ class Ui_MainWindow(object):
         font.setPointSize(-1)
         font.setBold(False)
         font.setItalic(False)
-        font.setUnderline(False)
         font.setWeight(50)
         self.label_14.setFont(font)
         self.label_14.setStyleSheet("color: rgb(0, 0, 0);\n"
@@ -376,7 +362,6 @@ class Ui_MainWindow(object):
         font.setPointSize(-1)
         font.setBold(False)
         font.setItalic(False)
-        font.setUnderline(False)
         font.setWeight(50)
         self.label_15.setFont(font)
         self.label_15.setStyleSheet("color: rgb(0, 0, 0);\n"
@@ -396,7 +381,6 @@ class Ui_MainWindow(object):
         font.setPointSize(-1)
         font.setBold(False)
         font.setItalic(False)
-        font.setUnderline(False)
         font.setWeight(50)
         self.label_16.setFont(font)
         self.label_16.setStyleSheet("color: rgb(0, 0, 0);\n"
@@ -405,13 +389,13 @@ class Ui_MainWindow(object):
         self.label_16.setAlignment(QtCore.Qt.AlignCenter)
         self.label_16.setObjectName("label_16")
         self.add_prod_type = QtWidgets.QPushButton(self.centralwidget)
-        self.add_prod_type.setGeometry(QtCore.QRect(330, 900, 50, 30))
+        self.add_prod_type.setGeometry(QtCore.QRect(370, 900, 80, 30))
         self.add_prod_type.setStyleSheet("font-size: 16px;\n"
 "font: \"Yu Gothic UI Semibold\";\n"
 "background-color: rgb(245, 245, 245)")
         self.add_prod_type.setObjectName("add_prod_type")
         self.Print_prod_type = QtWidgets.QPushButton(self.centralwidget)
-        self.Print_prod_type.setGeometry(QtCore.QRect(230, 900, 50, 30))
+        self.Print_prod_type.setGeometry(QtCore.QRect(230, 900, 80, 30))
         self.Print_prod_type.setStyleSheet("font-size: 16px;\n"
 "font: \"Yu Gothic UI Semibold\";\n"
 "background-color: rgb(245, 245, 245)")
@@ -422,7 +406,6 @@ class Ui_MainWindow(object):
         font.setPointSize(-1)
         font.setBold(False)
         font.setItalic(False)
-        font.setUnderline(False)
         font.setWeight(50)
         self.label_11.setFont(font)
         self.label_11.setStyleSheet("color: rgb(0, 0, 0);\n"
@@ -431,20 +414,107 @@ class Ui_MainWindow(object):
         self.label_11.setAlignment(QtCore.Qt.AlignCenter)
         self.label_11.setObjectName("label_11")
         self.add_format = QtWidgets.QPushButton(self.centralwidget)
-        self.add_format.setGeometry(QtCore.QRect(330, 700, 50, 30))
+        self.add_format.setGeometry(QtCore.QRect(370, 700, 80, 30))
         self.add_format.setStyleSheet("font-size: 16px;\n"
 "font: \"Yu Gothic UI Semibold\";\n"
 "background-color: rgb(245, 245, 245)")
         self.add_format.setObjectName("add_format")
         self.Print_format = QtWidgets.QPushButton(self.centralwidget)
-        self.Print_format.setGeometry(QtCore.QRect(230, 700, 50, 30))
+        self.Print_format.setGeometry(QtCore.QRect(230, 700, 80, 30))
         self.Print_format.setStyleSheet("font-size: 16px;\n"
 "font: \"Yu Gothic UI Semibold\";\n"
 "background-color: rgb(245, 245, 245)")
         self.Print_format.setObjectName("Print_format")
+        self.Generate_print = QtWidgets.QPushButton(self.centralwidget)
+        self.Generate_print.setGeometry(QtCore.QRect(510, 550, 80, 30))
+        self.Generate_print.setStyleSheet("font-size: 16px;\n"
+"font: \"Yu Gothic UI Semibold\";\n"
+"background-color: rgb(245, 245, 245)")
+        self.Generate_print.setObjectName("Generate_print")
+        self.generate_customer = QtWidgets.QPushButton(self.centralwidget)
+        self.generate_customer.setGeometry(QtCore.QRect(510, 600, 80, 30))
+        self.generate_customer.setStyleSheet("font-size: 16px;\n"
+"font: \"Yu Gothic UI Semibold\";\n"
+"background-color: rgb(245, 245, 245)")
+        self.generate_customer.setObjectName("generate_customer")
+        self.generate_product = QtWidgets.QPushButton(self.centralwidget)
+        self.generate_product.setGeometry(QtCore.QRect(510, 650, 80, 30))
+        self.generate_product.setStyleSheet("font-size: 16px;\n"
+"font: \"Yu Gothic UI Semibold\";\n"
+"background-color: rgb(245, 245, 245)")
+        self.generate_product.setObjectName("generate_product")
+        self.add_2 = QtWidgets.QPushButton(self.centralwidget)
+        self.add_2.setGeometry(QtCore.QRect(240, 470, 41, 31))
+        self.add_2.setStyleSheet("font-size: 16px;\n"
+"font: \"Yu Gothic UI Semibold\";\n"
+"background-color: rgb(245, 245, 245)")
+        self.add_2.setObjectName("add_2")
+        self.label_17 = QtWidgets.QLabel(self.centralwidget)
+        self.label_17.setGeometry(QtCore.QRect(290, 470, 301, 31))
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.label_17.setFont(font)
+        self.label_17.setStyleSheet("color: rgb(0, 0, 0);\n"
+"font-size: 20px;\n"
+"font: \"Arial Black\";")
+        self.label_17.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.label_17.setObjectName("label_17")
+        self.generate_format = QtWidgets.QPushButton(self.centralwidget)
+        self.generate_format.setGeometry(QtCore.QRect(510, 700, 80, 30))
+        self.generate_format.setStyleSheet("font-size: 16px;\n"
+"font: \"Yu Gothic UI Semibold\";\n"
+"background-color: rgb(245, 245, 245)")
+        self.generate_format.setObjectName("generate_format")
+        self.generate_order = QtWidgets.QPushButton(self.centralwidget)
+        self.generate_order.setGeometry(QtCore.QRect(510, 750, 80, 30))
+        self.generate_order.setStyleSheet("font-size: 16px;\n"
+"font: \"Yu Gothic UI Semibold\";\n"
+"background-color: rgb(245, 245, 245)")
+        self.generate_order.setObjectName("generate_order")
+        self.generate_dist = QtWidgets.QPushButton(self.centralwidget)
+        self.generate_dist.setGeometry(QtCore.QRect(510, 800, 80, 30))
+        self.generate_dist.setStyleSheet("font-size: 16px;\n"
+"font: \"Yu Gothic UI Semibold\";\n"
+"background-color: rgb(245, 245, 245)")
+        self.generate_dist.setObjectName("generate_dist")
+        self.generate_prop = QtWidgets.QPushButton(self.centralwidget)
+        self.generate_prop.setGeometry(QtCore.QRect(510, 850, 80, 30))
+        self.generate_prop.setStyleSheet("font-size: 16px;\n"
+"font: \"Yu Gothic UI Semibold\";\n"
+"background-color: rgb(245, 245, 245)")
+        self.generate_prop.setObjectName("generate_prop")
+        self.generate_prod_type = QtWidgets.QPushButton(self.centralwidget)
+        self.generate_prod_type.setGeometry(QtCore.QRect(510, 900, 80, 30))
+        self.generate_prod_type.setStyleSheet("font-size: 16px;\n"
+"font: \"Yu Gothic UI Semibold\";\n"
+"background-color: rgb(245, 245, 245)")
+        self.generate_prod_type.setObjectName("generate_prod_type")
+        self.excel = QtWidgets.QPushButton(self.centralwidget)
+        self.excel.setGeometry(QtCore.QRect(430, 410, 161, 31))
+        self.excel.setStyleSheet("font-size: 16px;\n"
+"font: \"Yu Gothic UI Semibold\";\n"
+"background-color: rgb(245, 245, 245)")
+        self.excel.setObjectName("excel")
+        self.gen_label = QtWidgets.QLabel(self.centralwidget)
+        self.gen_label.setGeometry(QtCore.QRect(230, 510, 361, 31))
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.gen_label.setFont(font)
+        self.gen_label.setStyleSheet("color: rgb(0, 0, 0);\n"
+"font-size: 20px;\n"
+"font: \"Arial Black\";")
+        self.gen_label.setText("")
+        self.gen_label.setAlignment(QtCore.Qt.AlignCenter)
+        self.gen_label.setObjectName("gen_label")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 860, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1050, 21))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -506,6 +576,17 @@ class Ui_MainWindow(object):
         self.label_11.setText(_translate("MainWindow", "Формат листов"))
         self.add_format.setText(_translate("MainWindow", "Д"))
         self.Print_format.setText(_translate("MainWindow", "П"))
+        self.Generate_print.setText(_translate("MainWindow", "Г"))
+        self.generate_customer.setText(_translate("MainWindow", "Г"))
+        self.generate_product.setText(_translate("MainWindow", "Г"))
+        self.add_2.setText(_translate("MainWindow", "Г"))
+        self.label_17.setText(_translate("MainWindow", "- сгенерировать 10 тыс. записей"))
+        self.generate_format.setText(_translate("MainWindow", "Г"))
+        self.generate_order.setText(_translate("MainWindow", "Г"))
+        self.generate_dist.setText(_translate("MainWindow", "Г"))
+        self.generate_prop.setText(_translate("MainWindow", "Г"))
+        self.generate_prod_type.setText(_translate("MainWindow", "Г"))
+        self.excel.setText(_translate("MainWindow", "Выгрузка в Excel"))
 
 
 if __name__ == "__main__":

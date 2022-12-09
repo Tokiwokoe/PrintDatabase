@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>860</width>
+    <width>1050</width>
     <height>1000</height>
    </rect>
   </property>
@@ -28,7 +28,7 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>861</width>
+      <width>1051</width>
       <height>321</height>
      </rect>
     </property>
@@ -43,7 +43,7 @@ background-color: rgb(245, 245, 245)</string>
      <rect>
       <x>230</x>
       <y>550</y>
-      <width>50</width>
+      <width>80</width>
       <height>30</height>
      </rect>
     </property>
@@ -61,7 +61,7 @@ background-color: rgb(245, 245, 245)</string>
      <rect>
       <x>230</x>
       <y>600</y>
-      <width>50</width>
+      <width>80</width>
       <height>30</height>
      </rect>
     </property>
@@ -79,7 +79,7 @@ background-color: rgb(245, 245, 245)</string>
      <rect>
       <x>230</x>
       <y>750</y>
-      <width>50</width>
+      <width>80</width>
       <height>30</height>
      </rect>
     </property>
@@ -97,7 +97,7 @@ background-color: rgb(245, 245, 245)</string>
      <rect>
       <x>230</x>
       <y>800</y>
-      <width>50</width>
+      <width>80</width>
       <height>30</height>
      </rect>
     </property>
@@ -115,7 +115,7 @@ background-color: rgb(245, 245, 245)</string>
      <rect>
       <x>230</x>
       <y>850</y>
-      <width>50</width>
+      <width>80</width>
       <height>30</height>
      </rect>
     </property>
@@ -133,7 +133,7 @@ background-color: rgb(245, 245, 245)</string>
      <rect>
       <x>230</x>
       <y>650</y>
-      <width>50</width>
+      <width>80</width>
       <height>30</height>
      </rect>
     </property>
@@ -149,7 +149,7 @@ background-color: rgb(245, 245, 245)</string>
    <widget class="QPushButton" name="Q_3_8_8">
     <property name="geometry">
      <rect>
-      <x>430</x>
+      <x>640</x>
       <y>580</y>
       <width>401</width>
       <height>31</height>
@@ -161,9 +161,6 @@ background-color: rgb(245, 245, 245)</string>
       <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
-      <underline>false</underline>
-      <strikeout>false</strikeout>
-      <kerning>true</kerning>
      </font>
     </property>
     <property name="styleSheet">
@@ -178,7 +175,7 @@ background-color: rgb(245, 245, 245)</string>
    <widget class="QPushButton" name="Q_3_8_9">
     <property name="geometry">
      <rect>
-      <x>430</x>
+      <x>640</x>
       <y>620</y>
       <width>401</width>
       <height>31</height>
@@ -196,7 +193,7 @@ background-color: rgb(245, 245, 245)</string>
    <widget class="QPushButton" name="Q_3_8_10">
     <property name="geometry">
      <rect>
-      <x>430</x>
+      <x>640</x>
       <y>660</y>
       <width>401</width>
       <height>31</height>
@@ -214,7 +211,7 @@ background-color: rgb(245, 245, 245)</string>
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
-      <x>440</x>
+      <x>650</x>
       <y>480</y>
       <width>381</width>
       <height>31</height>
@@ -226,7 +223,6 @@ background-color: rgb(245, 245, 245)</string>
       <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
-      <underline>false</underline>
      </font>
     </property>
     <property name="styleSheet">
@@ -244,7 +240,7 @@ font: &quot;Arial Black&quot;;</string>
    <widget class="QPushButton" name="Q_3_8_7">
     <property name="geometry">
      <rect>
-      <x>670</x>
+      <x>880</x>
       <y>520</y>
       <width>41</width>
       <height>31</height>
@@ -262,7 +258,7 @@ background-color: rgb(245, 245, 245)</string>
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>440</x>
+      <x>650</x>
       <y>330</y>
       <width>381</width>
       <height>51</height>
@@ -274,7 +270,6 @@ background-color: rgb(245, 245, 245)</string>
       <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
-      <underline>true</underline>
      </font>
     </property>
     <property name="styleSheet">
@@ -292,7 +287,7 @@ font: &quot;Arial Black&quot;;</string>
    <widget class="QPushButton" name="Q_3_8_1">
     <property name="geometry">
      <rect>
-      <x>450</x>
+      <x>660</x>
       <y>440</y>
       <width>41</width>
       <height>31</height>
@@ -310,7 +305,7 @@ background-color: rgb(245, 245, 245)</string>
    <widget class="QPushButton" name="Q_3_8_4">
     <property name="geometry">
      <rect>
-      <x>780</x>
+      <x>990</x>
       <y>440</y>
       <width>41</width>
       <height>31</height>
@@ -328,7 +323,7 @@ background-color: rgb(245, 245, 245)</string>
    <widget class="QPushButton" name="Q_3_8_6">
     <property name="geometry">
      <rect>
-      <x>560</x>
+      <x>770</x>
       <y>520</y>
       <width>41</width>
       <height>31</height>
@@ -346,7 +341,7 @@ background-color: rgb(245, 245, 245)</string>
    <widget class="QPushButton" name="Q_3_8_5">
     <property name="geometry">
      <rect>
-      <x>450</x>
+      <x>660</x>
       <y>520</y>
       <width>41</width>
       <height>31</height>
@@ -364,7 +359,7 @@ background-color: rgb(245, 245, 245)</string>
    <widget class="QLabel" name="label_7">
     <property name="geometry">
      <rect>
-      <x>440</x>
+      <x>650</x>
       <y>389</y>
       <width>381</width>
       <height>41</height>
@@ -376,7 +371,6 @@ background-color: rgb(245, 245, 245)</string>
       <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
-      <underline>false</underline>
      </font>
     </property>
     <property name="styleSheet">
@@ -394,7 +388,7 @@ font: &quot;Arial Black&quot;;</string>
    <widget class="QPushButton" name="Q_3_8_3">
     <property name="geometry">
      <rect>
-      <x>670</x>
+      <x>880</x>
       <y>440</y>
       <width>41</width>
       <height>31</height>
@@ -412,7 +406,7 @@ background-color: rgb(245, 245, 245)</string>
    <widget class="QPushButton" name="Q_3_8_2">
     <property name="geometry">
      <rect>
-      <x>560</x>
+      <x>770</x>
       <y>440</y>
       <width>41</width>
       <height>31</height>
@@ -430,7 +424,7 @@ background-color: rgb(245, 245, 245)</string>
    <widget class="QPushButton" name="Q_3_9_1">
     <property name="geometry">
      <rect>
-      <x>430</x>
+      <x>640</x>
       <y>700</y>
       <width>401</width>
       <height>31</height>
@@ -448,7 +442,7 @@ background-color: rgb(245, 245, 245)</string>
    <widget class="QPushButton" name="Q_3_9_3">
     <property name="geometry">
      <rect>
-      <x>430</x>
+      <x>640</x>
       <y>780</y>
       <width>401</width>
       <height>31</height>
@@ -466,7 +460,7 @@ background-color: rgb(245, 245, 245)</string>
    <widget class="QPushButton" name="Q_3_9_2">
     <property name="geometry">
      <rect>
-      <x>430</x>
+      <x>640</x>
       <y>740</y>
       <width>401</width>
       <height>31</height>
@@ -484,7 +478,7 @@ background-color: rgb(245, 245, 245)</string>
    <widget class="QPushButton" name="Q_3_9_4">
     <property name="geometry">
      <rect>
-      <x>430</x>
+      <x>640</x>
       <y>820</y>
       <width>401</width>
       <height>31</height>
@@ -502,7 +496,7 @@ background-color: rgb(245, 245, 245)</string>
    <widget class="QPushButton" name="Q_3_9_6">
     <property name="geometry">
      <rect>
-      <x>430</x>
+      <x>640</x>
       <y>900</y>
       <width>401</width>
       <height>31</height>
@@ -520,7 +514,7 @@ background-color: rgb(245, 245, 245)</string>
    <widget class="QPushButton" name="Q_3_9_5">
     <property name="geometry">
      <rect>
-      <x>430</x>
+      <x>640</x>
       <y>860</y>
       <width>401</width>
       <height>31</height>
@@ -538,9 +532,9 @@ background-color: rgb(245, 245, 245)</string>
    <widget class="QPushButton" name="add_customer">
     <property name="geometry">
      <rect>
-      <x>330</x>
+      <x>370</x>
       <y>600</y>
-      <width>50</width>
+      <width>80</width>
       <height>30</height>
      </rect>
     </property>
@@ -556,9 +550,9 @@ background-color: rgb(245, 245, 245)</string>
    <widget class="QPushButton" name="add_product">
     <property name="geometry">
      <rect>
-      <x>330</x>
+      <x>370</x>
       <y>650</y>
-      <width>50</width>
+      <width>80</width>
       <height>30</height>
      </rect>
     </property>
@@ -576,7 +570,7 @@ background-color: rgb(245, 245, 245)</string>
      <rect>
       <x>10</x>
       <y>330</y>
-      <width>411</width>
+      <width>581</width>
       <height>51</height>
      </rect>
     </property>
@@ -586,7 +580,6 @@ background-color: rgb(245, 245, 245)</string>
       <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
-      <underline>false</underline>
      </font>
     </property>
     <property name="styleSheet">
@@ -616,7 +609,6 @@ font: &quot;Arial Black&quot;;</string>
       <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
-      <underline>false</underline>
      </font>
     </property>
     <property name="styleSheet">
@@ -646,7 +638,6 @@ font: &quot;Arial Black&quot;;</string>
       <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
-      <underline>false</underline>
      </font>
     </property>
     <property name="styleSheet">
@@ -676,7 +667,6 @@ font: &quot;Arial Black&quot;;</string>
       <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
-      <underline>false</underline>
      </font>
     </property>
     <property name="styleSheet">
@@ -706,7 +696,6 @@ font: &quot;Arial Black&quot;;</string>
       <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
-      <underline>false</underline>
      </font>
     </property>
     <property name="styleSheet">
@@ -736,7 +725,6 @@ font: &quot;Arial Black&quot;;</string>
       <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
-      <underline>false</underline>
      </font>
     </property>
     <property name="styleSheet">
@@ -766,7 +754,6 @@ font: &quot;Arial Black&quot;;</string>
       <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
-      <underline>false</underline>
      </font>
     </property>
     <property name="styleSheet">
@@ -784,9 +771,9 @@ font: &quot;Arial Black&quot;;</string>
    <widget class="QPushButton" name="add_print">
     <property name="geometry">
      <rect>
-      <x>330</x>
+      <x>370</x>
       <y>550</y>
-      <width>50</width>
+      <width>80</width>
       <height>30</height>
      </rect>
     </property>
@@ -802,9 +789,9 @@ background-color: rgb(245, 245, 245)</string>
    <widget class="QPushButton" name="add_order">
     <property name="geometry">
      <rect>
-      <x>330</x>
+      <x>370</x>
       <y>750</y>
-      <width>50</width>
+      <width>80</width>
       <height>30</height>
      </rect>
     </property>
@@ -820,9 +807,9 @@ background-color: rgb(245, 245, 245)</string>
    <widget class="QPushButton" name="add_dist">
     <property name="geometry">
      <rect>
-      <x>330</x>
+      <x>370</x>
       <y>800</y>
-      <width>50</width>
+      <width>80</width>
       <height>30</height>
      </rect>
     </property>
@@ -838,9 +825,9 @@ background-color: rgb(245, 245, 245)</string>
    <widget class="QPushButton" name="add_prop">
     <property name="geometry">
      <rect>
-      <x>330</x>
+      <x>370</x>
       <y>850</y>
-      <width>50</width>
+      <width>80</width>
       <height>30</height>
      </rect>
     </property>
@@ -904,7 +891,6 @@ background-color: rgb(245, 245, 245)</string>
       <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
-      <underline>false</underline>
      </font>
     </property>
     <property name="styleSheet">
@@ -934,7 +920,6 @@ font: &quot;Arial Black&quot;;</string>
       <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
-      <underline>false</underline>
      </font>
     </property>
     <property name="styleSheet">
@@ -982,7 +967,6 @@ background-color: rgb(245, 245, 245)</string>
       <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
-      <underline>false</underline>
      </font>
     </property>
     <property name="styleSheet">
@@ -1000,9 +984,9 @@ font: &quot;Arial Black&quot;;</string>
    <widget class="QPushButton" name="add_prod_type">
     <property name="geometry">
      <rect>
-      <x>330</x>
+      <x>370</x>
       <y>900</y>
-      <width>50</width>
+      <width>80</width>
       <height>30</height>
      </rect>
     </property>
@@ -1020,7 +1004,7 @@ background-color: rgb(245, 245, 245)</string>
      <rect>
       <x>230</x>
       <y>900</y>
-      <width>50</width>
+      <width>80</width>
       <height>30</height>
      </rect>
     </property>
@@ -1048,7 +1032,6 @@ background-color: rgb(245, 245, 245)</string>
       <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
-      <underline>false</underline>
      </font>
     </property>
     <property name="styleSheet">
@@ -1066,9 +1049,9 @@ font: &quot;Arial Black&quot;;</string>
    <widget class="QPushButton" name="add_format">
     <property name="geometry">
      <rect>
-      <x>330</x>
+      <x>370</x>
       <y>700</y>
-      <width>50</width>
+      <width>80</width>
       <height>30</height>
      </rect>
     </property>
@@ -1086,7 +1069,7 @@ background-color: rgb(245, 245, 245)</string>
      <rect>
       <x>230</x>
       <y>700</y>
-      <width>50</width>
+      <width>80</width>
       <height>30</height>
      </rect>
     </property>
@@ -1099,13 +1082,251 @@ background-color: rgb(245, 245, 245)</string>
      <string>П</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="Generate_print">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>550</y>
+      <width>80</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 16px;
+font: &quot;Yu Gothic UI Semibold&quot;;
+background-color: rgb(245, 245, 245)</string>
+    </property>
+    <property name="text">
+     <string>Г</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="generate_customer">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>600</y>
+      <width>80</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 16px;
+font: &quot;Yu Gothic UI Semibold&quot;;
+background-color: rgb(245, 245, 245)</string>
+    </property>
+    <property name="text">
+     <string>Г</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="generate_product">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>650</y>
+      <width>80</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 16px;
+font: &quot;Yu Gothic UI Semibold&quot;;
+background-color: rgb(245, 245, 245)</string>
+    </property>
+    <property name="text">
+     <string>Г</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="add_2">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>470</y>
+      <width>41</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 16px;
+font: &quot;Yu Gothic UI Semibold&quot;;
+background-color: rgb(245, 245, 245)</string>
+    </property>
+    <property name="text">
+     <string>Г</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_17">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>470</y>
+      <width>301</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>-1</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 0, 0);
+font-size: 20px;
+font: &quot;Arial Black&quot;;</string>
+    </property>
+    <property name="text">
+     <string>- сгенерировать 10 тыс. записей</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="generate_format">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>700</y>
+      <width>80</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 16px;
+font: &quot;Yu Gothic UI Semibold&quot;;
+background-color: rgb(245, 245, 245)</string>
+    </property>
+    <property name="text">
+     <string>Г</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="generate_order">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>750</y>
+      <width>80</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 16px;
+font: &quot;Yu Gothic UI Semibold&quot;;
+background-color: rgb(245, 245, 245)</string>
+    </property>
+    <property name="text">
+     <string>Г</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="generate_dist">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>800</y>
+      <width>80</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 16px;
+font: &quot;Yu Gothic UI Semibold&quot;;
+background-color: rgb(245, 245, 245)</string>
+    </property>
+    <property name="text">
+     <string>Г</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="generate_prop">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>850</y>
+      <width>80</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 16px;
+font: &quot;Yu Gothic UI Semibold&quot;;
+background-color: rgb(245, 245, 245)</string>
+    </property>
+    <property name="text">
+     <string>Г</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="generate_prod_type">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>900</y>
+      <width>80</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 16px;
+font: &quot;Yu Gothic UI Semibold&quot;;
+background-color: rgb(245, 245, 245)</string>
+    </property>
+    <property name="text">
+     <string>Г</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="excel">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>410</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 16px;
+font: &quot;Yu Gothic UI Semibold&quot;;
+background-color: rgb(245, 245, 245)</string>
+    </property>
+    <property name="text">
+     <string>Выгрузка в Excel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="gen_label">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>510</y>
+      <width>361</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>-1</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 0, 0);
+font-size: 20px;
+font: &quot;Arial Black&quot;;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>860</width>
+     <width>1050</width>
      <height>21</height>
     </rect>
    </property>
