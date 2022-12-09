@@ -1,5 +1,6 @@
 import sys
 import connection
+import generator
 from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog, QTableWidgetItem
 
 from DeleteClass import DeleteData
@@ -155,7 +156,7 @@ class PrintTable(QMainWindow):
         self.rows = self.cursor.fetchall()
         self.tableWidget.setRowCount(len(self.rows))
         self.tableWidget.setColumnCount(2)
-        self.labels = ['ФИО', 'Дата заказа']
+        self.labels = ['ФИО', 'Дата рождения']
         self.tableWidget.setHorizontalHeaderLabels(self.labels)
         self.to_print_table()
 
@@ -347,7 +348,7 @@ class AdminWindow(PrintTable, AdminWindow.Ui_MainWindow):
         """ Установка интерфейса, фиксация размера и соединение кнопок с функциями"""
         super(AdminWindow, self).__init__()
         self.setupUi(self)
-        self.setFixedSize(860, 1000)
+        self.setFixedSize(1050, 1000)
         self.Print_print.clicked.connect(self.to_print_print)
         self.Print_customer.clicked.connect(self.to_print_customer)
         self.Print_product.clicked.connect(self.to_print_product)
@@ -381,7 +382,14 @@ class AdminWindow(PrintTable, AdminWindow.Ui_MainWindow):
         self.add_product.clicked.connect(self.to_add_product)
         self.add_prod_type.clicked.connect(self.to_add_prod_type)
         self.DeleteButton.clicked.connect(self.to_delete)
-
+        self.generate_customer.clicked.connect(self.to_generate_customer)
+        self.Generate_print.clicked.connect(self.to_generate_print)
+        self.generate_product.clicked.connect(self.to_generate_product)
+        self.generate_dist.clicked.connect(self.to_generate_dist)
+        self.generate_prop.clicked.connect(self.to_generate_prop)
+        self.generate_order.clicked.connect(self.to_generate_order)
+        self.generate_format.clicked.connect(self.to_generate_format)
+        self.generate_prod_type.clicked.connect(self.to_generate_prod_type)
 
     def to_add_customer(self):
         client = AddClient()
@@ -394,7 +402,6 @@ class AdminWindow(PrintTable, AdminWindow.Ui_MainWindow):
     def to_add_prop(self):
         prop = AddProperty()
         prop.exec_()
-
 
     def to_add_print(self):
         print = AddPrint()
@@ -419,6 +426,69 @@ class AdminWindow(PrintTable, AdminWindow.Ui_MainWindow):
     def to_delete(self):
         delete = DeleteData()
         delete.exec_()
+
+    def to_generate_customer(self):
+        self.cursor = connection.connection.cursor()
+        query = 'SELECT id FROM "Customer" ORDER BY id DESC LIMIT 1'
+        self.cursor.execute(query)
+        self.id = self.cursor.fetchone()
+        try:
+            query = generator.generate_customer(self.id)
+            self.cursor.execute(query)
+            connection.connection.commit()
+            self.gen_label.setText('Генерация заказчиков завершена')
+        except Exception as err:
+            print(err)
+            self.gen_label.setText('Ошибка')
+
+    def to_generate_print(self):
+        self.cursor = connection.connection.cursor()
+        query = 'SELECT id FROM "Print" ORDER BY id DESC LIMIT 1'
+        self.cursor.execute(query)
+        self.id = self.cursor.fetchone()
+        query = 'SELECT id FROM "District" ORDER BY id DESC LIMIT 1'
+        self.cursor.execute(query)
+        self.dist = self.cursor.fetchone()
+        query = 'SELECT id FROM "PropertyType" ORDER BY id DESC LIMIT 1'
+        self.cursor.execute(query)
+        self.prop = self.cursor.fetchone()
+        try:
+            query = generator.generate_print(self.id, self.dist, self.prop)
+            self.cursor.execute(query)
+            connection.connection.commit()
+            self.gen_label.setText('Генерация типографий завершена')
+        except Exception as err:
+            print(err)
+            self.gen_label.setText('Ошибка')
+
+    def to_generate_product(self):
+        pass
+
+    def to_generate_dist(self):
+        self.cursor = connection.connection.cursor()
+        query = 'SELECT id FROM "District" ORDER BY id DESC LIMIT 1'
+        self.cursor.execute(query)
+        self.id = self.cursor.fetchone()
+        try:
+            query = generator.generate_dist(self.id)
+            self.cursor.execute(query)
+            connection.connection.commit()
+            self.gen_label.setText('Генерация районов завершена')
+        except Exception as err:
+            print(err)
+            self.gen_label.setText('Ошибка')
+
+    def to_generate_prop(self):
+        pass
+
+    def to_generate_order(self):
+        pass
+
+    def to_generate_format(self):
+        pass
+
+    def to_generate_prod_type(self):
+        pass
 
 
 # Запуск программы
