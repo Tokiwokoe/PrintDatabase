@@ -5,7 +5,7 @@ import openpyxl
 from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog, QTableWidgetItem
 
 from DeleteClass import DeleteData
-from UIclass import AdminWindow
+from UIclass import AdminWindow, OK
 from AddClass import AddClient, AddDistrict, AddProperty, AddPrint, AddFormat, AddOrder, AddProduct, AddProductType
 
 
@@ -27,10 +27,11 @@ class PrintTable(QMainWindow):
 
     def to_print_print(self):
         self.cursor = connection.connection.cursor()
+        ok.exec_()
         query = 'SELECT name, "PropertyType".property, "District".district, address, phone, year FROM "Print" ' \
                 'LEFT JOIN "District" ON "District".id = "Print".district ' \
                 'LEFT JOIN "PropertyType" ON "PropertyType".id = "Print".property ' \
-                'ORDER BY "Print".id'
+                'ORDER BY "Print".id LIMIT ' + str(rows)
         self.cursor.execute(query)
         self.rows = self.cursor.fetchall()
         self.tableWidget.setRowCount(len(self.rows))
@@ -41,8 +42,9 @@ class PrintTable(QMainWindow):
 
     def to_print_customer(self):
         self.cursor = connection.connection.cursor()
+        ok.exec_()
         query = 'SELECT name, address, birthday, phone ' \
-                'FROM "Customer" ORDER BY "Customer".id'
+                'FROM "Customer" ORDER BY "Customer".id LIMIT ' + str(rows)
         self.cursor.execute(query)
         self.rows = self.cursor.fetchall()
         self.tableWidget.setRowCount(len(self.rows))
@@ -53,11 +55,12 @@ class PrintTable(QMainWindow):
 
     def to_print_product(self):
         self.cursor = connection.connection.cursor()
+        ok.exec_()
         query = 'SELECT publication, list_count, calculation, price, "ProductType".product, "Density".density, "PaperType".type FROM "Product" ' \
                 'LEFT JOIN "ProductType" ON "ProductType".id = "Product".type ' \
                 'LEFT JOIN "Density" ON "Density".id = "Product".density ' \
                 'LEFT JOIN "PaperType" ON "PaperType".id = "Product".paper_type ' \
-                'ORDER BY "Product".id'
+                'ORDER BY "Product".id LIMIT ' + str(rows)
         self.cursor.execute(query)
         self.rows = self.cursor.fetchall()
         self.tableWidget.setRowCount(len(self.rows))
@@ -68,7 +71,8 @@ class PrintTable(QMainWindow):
 
     def to_print_format(self):
         self.cursor = connection.connection.cursor()
-        query = 'SELECT density FROM "Density" ORDER BY "Density".id'
+        ok.exec_()
+        query = 'SELECT density FROM "Density" ORDER BY "Density".id LIMIT ' + str(rows)
         self.cursor.execute(query)
         self.rows = self.cursor.fetchall()
         self.tableWidget.setRowCount(len(self.rows))
@@ -79,7 +83,8 @@ class PrintTable(QMainWindow):
 
     def to_print_paper(self):
         self.cursor = connection.connection.cursor()
-        query = 'SELECT type FROM "PaperType" ORDER BY "PaperType".id'
+        ok.exec_()
+        query = 'SELECT type FROM "PaperType" ORDER BY "PaperType".id LIMIT ' + str(rows)
         self.cursor.execute(query)
         self.rows = self.cursor.fetchall()
         self.tableWidget.setRowCount(len(self.rows))
@@ -90,7 +95,8 @@ class PrintTable(QMainWindow):
 
     def to_print_dist(self):
         self.cursor = connection.connection.cursor()
-        query = 'SELECT district FROM "District" ORDER BY "District".id'
+        ok.exec_()
+        query = 'SELECT district FROM "District" ORDER BY "District".id LIMIT ' + str(rows)
         self.cursor.execute(query)
         self.rows = self.cursor.fetchall()
         self.tableWidget.setRowCount(len(self.rows))
@@ -101,10 +107,11 @@ class PrintTable(QMainWindow):
 
     def to_print_order(self):
         self.cursor = connection.connection.cursor()
+        ok.exec_()
         query = 'SELECT "Customer".name, "Product".publication, date_start, date_plan, date_fact, cost ' \
                 'FROM "Order" ' \
                 'LEFT JOIN "Product" ON "Product".id = "Order".product ' \
-                'LEFT JOIN "Customer" ON "Customer".id = "Order".client ORDER BY "Order".id'
+                'LEFT JOIN "Customer" ON "Customer".id = "Order".client ORDER BY "Order".id LIMIT ' + str(rows)
         self.cursor.execute(query)
         self.rows = self.cursor.fetchall()
         self.tableWidget.setRowCount(len(self.rows))
@@ -115,7 +122,8 @@ class PrintTable(QMainWindow):
 
     def to_print_prop(self):
         self.cursor = connection.connection.cursor()
-        query = 'SELECT property FROM "PropertyType" ORDER BY "PropertyType".id'
+        ok.exec_()
+        query = 'SELECT property FROM "PropertyType" ORDER BY "PropertyType".id LIMIT ' + str(rows)
         self.cursor.execute(query)
         self.rows = self.cursor.fetchall()
         self.tableWidget.setRowCount(len(self.rows))
@@ -126,7 +134,8 @@ class PrintTable(QMainWindow):
 
     def to_print_prod_type(self):
         self.cursor = connection.connection.cursor()
-        query = 'SELECT product FROM "ProductType" ORDER BY "ProductType".id'
+        ok.exec_()
+        query = 'SELECT product FROM "ProductType" ORDER BY "ProductType".id LIMIT ' + str(rows)
         self.cursor.execute(query)
         self.rows = self.cursor.fetchall()
         self.tableWidget.setRowCount(len(self.rows))
@@ -137,9 +146,10 @@ class PrintTable(QMainWindow):
 
     def to_print_Q_3_8_1(self):
         self.cursor = connection.connection.cursor()
+        ok.exec_()
         query = 'SELECT name, "District".district, year, phone FROM "Print" ' \
                 'INNER JOIN "District" ON "District".id = "Print".district ' \
-                'WHERE "Print".id > 3'
+                'WHERE "Print".id > 3 LIMIT ' + str(rows)
         self.cursor.execute(query)
         self.rows = self.cursor.fetchall()
         self.tableWidget.setRowCount(len(self.rows))
@@ -150,9 +160,10 @@ class PrintTable(QMainWindow):
 
     def to_print_Q_3_8_2(self):
         self.cursor = connection.connection.cursor()
+        ok.exec_()
         query = 'SELECT name, "District".district, year, phone FROM "Print" ' \
                 'INNER JOIN "District" ON "District".id = "Print".district ' \
-                'WHERE "District".id > 1'
+                'WHERE "District".id > 1 LIMIT ' + str(rows)
         self.cursor.execute(query)
         self.rows = self.cursor.fetchall()
         self.tableWidget.setRowCount(len(self.rows))
@@ -163,9 +174,10 @@ class PrintTable(QMainWindow):
 
     def to_print_Q_3_8_3(self):
         self.cursor = connection.connection.cursor()
+        ok.exec_()
         query = 'SELECT name, date_start FROM "Order" ' \
                 'INNER JOIN "Customer" ON "Customer".id = "Order".client ' \
-                'WHERE birthday BETWEEN \'15.05.1997\' AND \'29.12.2000\''
+                'WHERE birthday BETWEEN \'15.05.1997\' AND \'29.12.2000\' LIMIT ' + str(rows)
         self.cursor.execute(query)
         self.rows = self.cursor.fetchall()
         self.tableWidget.setRowCount(len(self.rows))
@@ -176,9 +188,10 @@ class PrintTable(QMainWindow):
 
     def to_print_Q_3_8_4(self):
         self.cursor = connection.connection.cursor()
+        ok.exec_()
         query = 'SELECT name, date_start FROM "Order" ' \
                 'INNER JOIN "Customer" ON "Customer".id = "Order".client ' \
-                'WHERE date_start < \'15.07.2022\''
+                'WHERE date_start < \'15.07.2022\' LIMIT ' + str(rows)
         self.cursor.execute(query)
         self.rows = self.cursor.fetchall()
         self.tableWidget.setRowCount(len(self.rows))
@@ -189,8 +202,9 @@ class PrintTable(QMainWindow):
 
     def to_print_Q_3_8_5(self):
         self.cursor = connection.connection.cursor()
+        ok.exec_()
         query = 'SELECT name, phone, "PropertyType".property FROM "Print" ' \
-                'INNER JOIN "PropertyType" ON "PropertyType".id = "Print".property'
+                'INNER JOIN "PropertyType" ON "PropertyType".id = "Print".property LIMIT ' + str(rows)
         self.cursor.execute(query)
         self.rows = self.cursor.fetchall()
         self.tableWidget.setRowCount(len(self.rows))
@@ -201,8 +215,9 @@ class PrintTable(QMainWindow):
 
     def to_print_Q_3_8_6(self):
         self.cursor = connection.connection.cursor()
+        ok.exec_()
         query = 'SELECT name, "Order".id FROM "Customer" ' \
-                'INNER JOIN "Order" ON "Order".client = "Customer".id'
+                'INNER JOIN "Order" ON "Order".client = "Customer".id LIMIT ' + str(rows)
         self.cursor.execute(query)
         self.rows = self.cursor.fetchall()
         self.tableWidget.setRowCount(len(self.rows))
@@ -213,8 +228,9 @@ class PrintTable(QMainWindow):
 
     def to_print_Q_3_8_7(self):
         self.cursor = connection.connection.cursor()
+        ok.exec_()
         query = 'SELECT name, "District".district, address FROM "Print" ' \
-                'INNER JOIN "District" ON "District".id = "Print".district'
+                'INNER JOIN "District" ON "District".id = "Print".district LIMIT ' + str(rows)
         self.cursor.execute(query)
         self.rows = self.cursor.fetchall()
         self.tableWidget.setRowCount(len(self.rows))
@@ -225,8 +241,9 @@ class PrintTable(QMainWindow):
 
     def to_print_Q_3_8_8(self):
         self.cursor = connection.connection.cursor()
+        ok.exec_()
         query = 'SELECT name, "Order".id FROM "Customer" ' \
-                'LEFT JOIN "Order" ON "Order".client = "Customer".id'
+                'LEFT JOIN "Order" ON "Order".client = "Customer".id LIMIT ' + str(rows)
         self.cursor.execute(query)
         self.rows = self.cursor.fetchall()
         self.tableWidget.setRowCount(len(self.rows))
@@ -237,8 +254,9 @@ class PrintTable(QMainWindow):
 
     def to_print_Q_3_8_9(self):
         self.cursor = connection.connection.cursor()
+        ok.exec_()
         query = 'SELECT name, "Order".id FROM "Customer" ' \
-                'RIGHT JOIN "Order" ON "Order".client = "Customer".id'
+                'RIGHT JOIN "Order" ON "Order".client = "Customer".id LIMIT ' + str(rows)
         self.cursor.execute(query)
         self.rows = self.cursor.fetchall()
         self.tableWidget.setRowCount(len(self.rows))
@@ -249,10 +267,11 @@ class PrintTable(QMainWindow):
 
     def to_print_Q_3_8_10(self):
         self.cursor = connection.connection.cursor()
+        ok.exec_()
         query = 'SELECT "Print".id, name, "District".district FROM "Print" ' \
                 'LEFT JOIN "District" ON "District".id = "Print".district ' \
                 'WHERE "District".district = ' \
-                '(SELECT DISTINCT district FROM "District" WHERE district LIKE \'В%\')'
+                '(SELECT DISTINCT district FROM "District" WHERE district LIKE \'В%\') LIMIT ' + str(rows)
         self.cursor.execute(query)
         self.rows = self.cursor.fetchall()
         self.tableWidget.setRowCount(len(self.rows))
@@ -263,10 +282,11 @@ class PrintTable(QMainWindow):
 
     def to_print_Q_3_9_1(self):
         self.cursor = connection.connection.cursor()
+        ok.exec_()
         query = 'SELECT name, COUNT("Order".id) AS total_orders FROM "Customer" ' \
                 'LEFT JOIN "Order" ON "Order".client = "Customer".id ' \
                 'GROUP BY name ' \
-                'ORDER BY total_orders DESC'
+                'ORDER BY total_orders DESC LIMIT ' + str(rows)
         self.cursor.execute(query)
         self.rows = self.cursor.fetchall()
         self.tableWidget.setRowCount(len(self.rows))
@@ -277,10 +297,11 @@ class PrintTable(QMainWindow):
 
     def to_print_Q_3_9_2(self):
         self.cursor = connection.connection.cursor()
+        ok.exec_()
         query = 'SELECT name, COUNT("Order".id) AS total_orders FROM "Customer" ' \
                 'LEFT JOIN "Order" ON "Order".client = "Customer".id ' \
                 'WHERE name LIKE \'К%\' GROUP BY name ' \
-                'ORDER BY total_orders DESC'
+                'ORDER BY total_orders DESC LIMIT ' + str(rows)
         self.cursor.execute(query)
         self.rows = self.cursor.fetchall()
         self.tableWidget.setRowCount(len(self.rows))
@@ -291,11 +312,12 @@ class PrintTable(QMainWindow):
 
     def to_print_Q_3_9_3(self):
         self.cursor = connection.connection.cursor()
+        ok.exec_()
         query = 'SELECT name, COUNT("Order".id) AS total_orders FROM "Customer" ' \
                 'LEFT JOIN "Order" ON "Order".client = "Customer".id ' \
                 'GROUP BY name ' \
                 'HAVING COUNT("Order".id) > 1 ' \
-                'ORDER BY total_orders DESC'
+                'ORDER BY total_orders DESC LIMIT ' + str(rows)
         self.cursor.execute(query)
         self.rows = self.cursor.fetchall()
         self.tableWidget.setRowCount(len(self.rows))
@@ -306,12 +328,13 @@ class PrintTable(QMainWindow):
 
     def to_print_Q_3_9_4(self):
         self.cursor = connection.connection.cursor()
+        ok.exec_()
         query = 'SELECT name, COUNT("Order".id) AS total_orders FROM "Customer" ' \
                 'LEFT JOIN "Order" ON "Order".client = "Customer".id ' \
                 'WHERE name LIKE \'К%\' ' \
                 'GROUP BY name ' \
                 'HAVING COUNT("Order".id) < 2 ' \
-                'ORDER BY total_orders DESC'
+                'ORDER BY total_orders DESC LIMIT ' + str(rows)
         self.cursor.execute(query)
         self.rows = self.cursor.fetchall()
         self.tableWidget.setRowCount(len(self.rows))
@@ -322,14 +345,14 @@ class PrintTable(QMainWindow):
 
     def to_print_Q_3_9_5(self):
         self.cursor = connection.connection.cursor()
+        ok.exec_()
         query = 'SELECT "Customer".id, COUNT("Order".id) AS order_count FROM "Customer" ' \
                 'LEFT JOIN "Order" ON "Order".client = "Customer".id ' \
                 'GROUP BY "Customer".id ' \
                 'HAVING COUNT("Order".id) = ' \
                 '(SELECT COUNT("Order".id) AS order_count FROM "Customer" ' \
                 'GROUP BY order_count ' \
-                'HAVING COUNT("Order".id) = 1) ' \
-                'LIMIT 10'
+                'HAVING COUNT("Order".id) = 1) LIMIT ' + str(rows)
         self.cursor.execute(query)
         self.rows = self.cursor.fetchall()
         self.tableWidget.setRowCount(len(self.rows))
@@ -340,13 +363,14 @@ class PrintTable(QMainWindow):
 
     def to_print_Q_3_9_6(self):
         self.cursor = connection.connection.cursor()
+        ok.exec_()
         query = 'SELECT name, publication, price FROM "Product" ' \
                 'LEFT JOIN "Order" ON "Order".product = "Product".id ' \
                 'LEFT JOIN "Customer" ON "Customer".id = "Order".client ' \
                 'WHERE EXISTS ' \
                 '(SELECT name FROM "Customer" ' \
                 'WHERE "Customer".id = 2) ' \
-                'ORDER BY price DESC'
+                'ORDER BY price DESC LIMIT ' + str(rows)
         self.cursor.execute(query)
         self.rows = self.cursor.fetchall()
         self.tableWidget.setRowCount(len(self.rows))
@@ -608,10 +632,28 @@ class AdminWindow(PrintTable, AdminWindow.Ui_MainWindow):
             self.gen_label.setText('Ошибка')
 
 
+class OK(QDialog, OK.Ui_Dialog):
+    def __init__(self):
+        super(OK, self).__init__()
+        self.setupUi(self)
+        self.setFixedSize(560, 150)
+        self.OKbutton.clicked.connect(self.correct_data)
+
+    def correct_data(self):
+        self.cursor = connection.connection.cursor()
+        global rows
+        rows = self.rows.text()
+        if str(rows).strip().isalnum() and 0 < int(rows) < 1000001:
+            self.close()
+        else:
+            self.error.setText('Проверьте корректность заполнения полей!')
+
+
 # Запуск программы
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     window = AdminWindow()
+    ok = OK()
 
     window.show()
     sys.exit(app.exec_())
