@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'AddFormat.ui'
+# Form implementation generated from reading ui file 'AddPaper.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.7
 #
@@ -16,6 +16,20 @@ class Ui_Dialog(object):
         Dialog.setObjectName("Dialog")
         Dialog.resize(560, 150)
         Dialog.setStyleSheet("background-color: rgb(245, 245, 175)")
+        self.paper = QtWidgets.QLineEdit(Dialog)
+        self.paper.setGeometry(QtCore.QRect(150, 40, 260, 20))
+        self.paper.setStyleSheet("font-size: 16px;\n"
+"font: \"Yu Gothic UI Semibold\";\n"
+"background-color: rgb(245, 245, 245)")
+        self.paper.setText("")
+        self.paper.setObjectName("paper")
+        self.label_3 = QtWidgets.QLabel(Dialog)
+        self.label_3.setGeometry(QtCore.QRect(150, 10, 261, 20))
+        self.label_3.setStyleSheet("color: rgb(0, 0, 0);\n"
+"font-size: 16px;\n"
+"font: \"Arial Black\";")
+        self.label_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_3.setObjectName("label_3")
         self.OKbutton = QtWidgets.QPushButton(Dialog)
         self.OKbutton.setGeometry(QtCore.QRect(200, 100, 161, 41))
         self.OKbutton.setStyleSheet("font-size: 16px;\n"
@@ -30,20 +44,6 @@ class Ui_Dialog(object):
         self.error.setText("")
         self.error.setAlignment(QtCore.Qt.AlignCenter)
         self.error.setObjectName("error")
-        self.density = QtWidgets.QLineEdit(Dialog)
-        self.density.setGeometry(QtCore.QRect(150, 40, 260, 20))
-        self.density.setStyleSheet("font-size: 16px;\n"
-"font: \"Yu Gothic UI Semibold\";\n"
-"background-color: rgb(245, 245, 245)")
-        self.density.setText("")
-        self.density.setObjectName("density")
-        self.label_4 = QtWidgets.QLabel(Dialog)
-        self.label_4.setGeometry(QtCore.QRect(150, 10, 261, 20))
-        self.label_4.setStyleSheet("color: rgb(0, 0, 0);\n"
-"font-size: 16px;\n"
-"font: \"Arial Black\";")
-        self.label_4.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_4.setObjectName("label_4")
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -51,8 +51,8 @@ class Ui_Dialog(object):
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
+        self.label_3.setText(_translate("Dialog", "Тип бумаги"))
         self.OKbutton.setText(_translate("Dialog", "ОК"))
-        self.label_4.setText(_translate("Dialog", "Плотность бумаги"))
 
 
 if __name__ == "__main__":

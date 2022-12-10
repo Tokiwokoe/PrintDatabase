@@ -1,5 +1,5 @@
 from PyQt5.QtWidgets import QDialog
-from UIclass import AddProp, AddDist, AddClient, AddFormat, AddPrint, AddOrder, AddProduct, AddProductType
+from UIclass import AddProp, AddDist, AddClient, AddFormat, AddPrint, AddOrder, AddProduct, AddProductType, AddPaper
 import connection
 
 
@@ -150,14 +150,39 @@ class AddFormat(QDialog, AddFormat.Ui_Dialog):
 
     def correct_data(self):
         self.cursor = connection.connection.cursor()
-        paper = self.paper.text()
         density = self.density.text()
         query = 'SELECT id FROM "PaperFormat" ORDER BY id DESC LIMIT 1'
         self.cursor.execute(query)
         self.id = self.cursor.fetchone()
-        if 0 < len(paper) < 30 and 0 < len(density) < 30:
+        if 0 < len(density) < 30:
             try:
-                query = f"INSERT INTO \"PaperFormat\" VALUES ({int(self.id[0])+1}, '{paper}', '{density}')"
+                query = f"INSERT INTO \"Density\" VALUES ({int(self.id[0])+1}, '{density}')"
+                self.cursor.execute(query)
+                connection.connection.commit()
+                self.error.setText('Успешно добавлено')
+            except Exception as err:
+                print(err)
+                self.error.setText('Что-то пошло не так :(')
+        else:
+            self.error.setText('Проверьте корректность заполнения полей!')
+
+
+class AddPaper(QDialog, AddPaper.Ui_Dialog):
+    def __init__(self):
+        super(AddPaper, self).__init__()
+        self.setupUi(self)
+        self.setFixedSize(560, 150)
+        self.OKbutton.clicked.connect(self.correct_data)
+
+    def correct_data(self):
+        self.cursor = connection.connection.cursor()
+        paper = self.paper.text()
+        query = 'SELECT id FROM "PaperType" ORDER BY id DESC LIMIT 1'
+        self.cursor.execute(query)
+        self.id = self.cursor.fetchone()
+        if 0 < len(paper) < 30:
+            try:
+                query = f"INSERT INTO \"PaperType\" VALUES ({int(self.id[0])+1}, '{paper}')"
                 self.cursor.execute(query)
                 connection.connection.commit()
                 self.error.setText('Успешно добавлено')
@@ -220,6 +245,14 @@ class AddProduct(QDialog, AddProduct.Ui_Dialog):
         self.cursor.execute(query)
         for t in self.cursor.fetchall():
             self.prod_type.addItem(str(t))
+        query = 'SELECT id, density FROM "Density"'
+        self.cursor.execute(query)
+        for t in self.cursor.fetchall():
+            self.density.addItem(str(t))
+        query = 'SELECT id, type FROM "PaperType"'
+        self.cursor.execute(query)
+        for t in self.cursor.fetchall():
+            self.paper.addItem(str(t))
 
     def correct_data(self):
         publication = self.publication.text()
@@ -228,12 +261,16 @@ class AddProduct(QDialog, AddProduct.Ui_Dialog):
         price = self.price.text()
         prod_type = self.prod_type.currentText().replace('(', '').replace(')', '').replace(' \'', '\'').split(',')
         prod_type_id = str(prod_type[0])
-        if 0 < len(publication) < 129 and 0 < int(calculation) < 1000 and 0 < int(count) < 1000000 and price.isalnum():
+        density = self.density.currentText().replace('(', '').replace(')', '').replace(' \'', '\'').split(',')
+        paper = self.paper.currentText().replace('(', '').replace(')', '').replace(' \'', '\'').split(',')
+        density_id = str(density[0])
+        paper_id = str(paper[0])
+        if 0 < len(publication) < 129 and 0 < int(calculation) < 1000001 and 0 < int(count) < 1000000 and price.isalnum():
             try:
                 query = 'SELECT id FROM "Product" ORDER BY id DESC LIMIT 1'
                 self.cursor.execute(query)
                 self.id = self.cursor.fetchone()
-                query = f"INSERT INTO \"Product\" VALUES({int(self.id[0]) + 1}, '{count}', '{calculation}', '{price}', {prod_type_id}, '{publication}')"
+                query = f"INSERT INTO \"Product\" VALUES({int(self.id[0]) + 1}, '{count}', '{calculation}', '{price}', '{publication}', {density_id}, {paper_id}, {prod_type_id})"
                 self.cursor.execute(query)
                 connection.connection.commit()
                 self.error.setText('Успешно добавлено')

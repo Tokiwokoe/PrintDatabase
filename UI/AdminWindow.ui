@@ -1177,7 +1177,7 @@ font-size: 20px;
 font: &quot;Arial Black&quot;;</string>
     </property>
     <property name="text">
-     <string>- сгенерировать 10 тыс. записей</string>
+     <string>- генерация случайных данных</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>

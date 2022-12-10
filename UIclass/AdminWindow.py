@@ -611,7 +611,7 @@ class Ui_MainWindow(object):
         self.generate_customer.setText(_translate("MainWindow", "Г"))
         self.generate_product.setText(_translate("MainWindow", "Г"))
         self.add_2.setText(_translate("MainWindow", "Г"))
-        self.label_17.setText(_translate("MainWindow", "- сгенерировать 10 тыс. записей"))
+        self.label_17.setText(_translate("MainWindow", "- генерация случайных данных"))
         self.generate_density.setText(_translate("MainWindow", "Г"))
         self.generate_order.setText(_translate("MainWindow", "Г"))
         self.generate_dist.setText(_translate("MainWindow", "Г"))

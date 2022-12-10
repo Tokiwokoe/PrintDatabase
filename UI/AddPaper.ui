@@ -16,6 +16,45 @@
   <property name="styleSheet">
    <string notr="true">background-color: rgb(245, 245, 175)</string>
   </property>
+  <widget class="QLineEdit" name="paper">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>40</y>
+     <width>260</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-size: 16px;
+font: &quot;Yu Gothic UI Semibold&quot;;
+background-color: rgb(245, 245, 245)</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>10</y>
+     <width>261</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 0, 0);
+font-size: 16px;
+font: &quot;Arial Black&quot;;</string>
+   </property>
+   <property name="text">
+    <string>Тип бумаги</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
   <widget class="QPushButton" name="OKbutton">
    <property name="geometry">
     <rect>
@@ -50,45 +89,6 @@ font: 16pt &quot;Franklin Gothic Demi&quot;;</string>
    </property>
    <property name="text">
     <string/>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="density">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>40</y>
-     <width>260</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">font-size: 16px;
-font: &quot;Yu Gothic UI Semibold&quot;;
-background-color: rgb(245, 245, 245)</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_4">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>10</y>
-     <width>261</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: rgb(0, 0, 0);
-font-size: 16px;
-font: &quot;Arial Black&quot;;</string>
-   </property>
-   <property name="text">
-    <string>Плотность бумаги</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>

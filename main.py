@@ -61,7 +61,7 @@ class PrintTable(QMainWindow):
         self.rows = self.cursor.fetchall()
         self.tableWidget.setRowCount(len(self.rows))
         self.tableWidget.setColumnCount(7)
-        self.labels = ['Название изделия', 'Количество страниц', 'Тираж', 'Цена за экземпляр', 'Тип изделия', 'Тип бумаги', 'Плостность бумаги']
+        self.labels = ['Название изделия', 'Количество страниц', 'Тираж', 'Цена за экземпляр', 'Тип изделия', 'Плостность бумаги', 'Тип бумаги']
         self.tableWidget.setHorizontalHeaderLabels(self.labels)
         self.to_print_table()
 

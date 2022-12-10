@@ -17,49 +17,49 @@ class Ui_Dialog(object):
         Dialog.resize(740, 140)
         Dialog.setStyleSheet("background-color: rgb(245, 245, 175)")
         self.publication = QtWidgets.QLineEdit(Dialog)
-        self.publication.setGeometry(QtCore.QRect(10, 40, 110, 20))
+        self.publication.setGeometry(QtCore.QRect(0, 40, 90, 20))
         self.publication.setStyleSheet("font-size: 16px;\n"
 "font: \"Yu Gothic UI Semibold\";\n"
 "background-color: rgb(245, 245, 245)")
         self.publication.setText("")
         self.publication.setObjectName("publication")
         self.count = QtWidgets.QLineEdit(Dialog)
-        self.count.setGeometry(QtCore.QRect(140, 40, 170, 20))
+        self.count.setGeometry(QtCore.QRect(100, 40, 130, 20))
         self.count.setStyleSheet("font-size: 16px;\n"
 "font: \"Yu Gothic UI Semibold\";\n"
 "background-color: rgb(245, 245, 245)")
         self.count.setText("")
         self.count.setObjectName("count")
         self.price = QtWidgets.QLineEdit(Dialog)
-        self.price.setGeometry(QtCore.QRect(440, 40, 100, 20))
+        self.price.setGeometry(QtCore.QRect(310, 40, 50, 20))
         self.price.setStyleSheet("font-size: 16px;\n"
 "font: \"Yu Gothic UI Semibold\";\n"
 "background-color: rgb(245, 245, 245)")
         self.price.setText("")
         self.price.setObjectName("price")
         self.label_3 = QtWidgets.QLabel(Dialog)
-        self.label_3.setGeometry(QtCore.QRect(10, 10, 110, 20))
+        self.label_3.setGeometry(QtCore.QRect(0, 10, 90, 20))
         self.label_3.setStyleSheet("color: rgb(0, 0, 0);\n"
 "font-size: 16px;\n"
 "font: \"Arial Black\";")
         self.label_3.setAlignment(QtCore.Qt.AlignCenter)
         self.label_3.setObjectName("label_3")
         self.label_5 = QtWidgets.QLabel(Dialog)
-        self.label_5.setGeometry(QtCore.QRect(140, 10, 170, 20))
+        self.label_5.setGeometry(QtCore.QRect(100, 10, 130, 20))
         self.label_5.setStyleSheet("color: rgb(0, 0, 0);\n"
 "font-size: 16px;\n"
 "font: \"Arial Black\";")
         self.label_5.setAlignment(QtCore.Qt.AlignCenter)
         self.label_5.setObjectName("label_5")
         self.label_7 = QtWidgets.QLabel(Dialog)
-        self.label_7.setGeometry(QtCore.QRect(330, 10, 101, 20))
+        self.label_7.setGeometry(QtCore.QRect(240, 10, 61, 20))
         self.label_7.setStyleSheet("color: rgb(0, 0, 0);\n"
 "font-size: 16px;\n"
 "font: \"Arial Black\";")
         self.label_7.setAlignment(QtCore.Qt.AlignCenter)
         self.label_7.setObjectName("label_7")
         self.label_8 = QtWidgets.QLabel(Dialog)
-        self.label_8.setGeometry(QtCore.QRect(440, 10, 100, 20))
+        self.label_8.setGeometry(QtCore.QRect(310, 10, 50, 20))
         self.label_8.setStyleSheet("color: rgb(0, 0, 0);\n"
 "font-size: 16px;\n"
 "font: \"Arial Black\";")
@@ -80,25 +80,51 @@ class Ui_Dialog(object):
         self.error.setAlignment(QtCore.Qt.AlignCenter)
         self.error.setObjectName("error")
         self.calculation = QtWidgets.QLineEdit(Dialog)
-        self.calculation.setGeometry(QtCore.QRect(330, 40, 100, 20))
+        self.calculation.setGeometry(QtCore.QRect(240, 40, 61, 20))
         self.calculation.setStyleSheet("font-size: 16px;\n"
 "font: \"Yu Gothic UI Semibold\";\n"
 "background-color: rgb(245, 245, 245)")
         self.calculation.setText("")
         self.calculation.setObjectName("calculation")
         self.prod_type = QtWidgets.QComboBox(Dialog)
-        self.prod_type.setGeometry(QtCore.QRect(560, 40, 170, 22))
+        self.prod_type.setGeometry(QtCore.QRect(370, 40, 120, 22))
         self.prod_type.setStyleSheet("font-size: 16px;\n"
 "font: \"Yu Gothic UI Semibold\";\n"
 "background-color: rgb(245, 245, 245)")
         self.prod_type.setObjectName("prod_type")
         self.label_9 = QtWidgets.QLabel(Dialog)
-        self.label_9.setGeometry(QtCore.QRect(560, 10, 170, 20))
+        self.label_9.setGeometry(QtCore.QRect(370, 10, 120, 20))
         self.label_9.setStyleSheet("color: rgb(0, 0, 0);\n"
 "font-size: 16px;\n"
 "font: \"Arial Black\";")
         self.label_9.setAlignment(QtCore.Qt.AlignCenter)
         self.label_9.setObjectName("label_9")
+        self.label_10 = QtWidgets.QLabel(Dialog)
+        self.label_10.setGeometry(QtCore.QRect(500, 10, 89, 20))
+        self.label_10.setStyleSheet("color: rgb(0, 0, 0);\n"
+"font-size: 16px;\n"
+"font: \"Arial Black\";")
+        self.label_10.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_10.setObjectName("label_10")
+        self.density = QtWidgets.QComboBox(Dialog)
+        self.density.setGeometry(QtCore.QRect(500, 40, 90, 22))
+        self.density.setStyleSheet("font-size: 16px;\n"
+"font: \"Yu Gothic UI Semibold\";\n"
+"background-color: rgb(245, 245, 245)")
+        self.density.setObjectName("density")
+        self.label_11 = QtWidgets.QLabel(Dialog)
+        self.label_11.setGeometry(QtCore.QRect(600, 10, 140, 20))
+        self.label_11.setStyleSheet("color: rgb(0, 0, 0);\n"
+"font-size: 16px;\n"
+"font: \"Arial Black\";")
+        self.label_11.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_11.setObjectName("label_11")
+        self.paper = QtWidgets.QComboBox(Dialog)
+        self.paper.setGeometry(QtCore.QRect(599, 40, 141, 22))
+        self.paper.setStyleSheet("font-size: 16px;\n"
+"font: \"Yu Gothic UI Semibold\";\n"
+"background-color: rgb(245, 245, 245)")
+        self.paper.setObjectName("paper")
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -107,11 +133,13 @@ class Ui_Dialog(object):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
         self.label_3.setText(_translate("Dialog", "Название"))
-        self.label_5.setText(_translate("Dialog", "Количество  страниц"))
+        self.label_5.setText(_translate("Dialog", "Кол-во  страниц"))
         self.label_7.setText(_translate("Dialog", "Тираж"))
         self.label_8.setText(_translate("Dialog", "Цена"))
         self.OKbutton.setText(_translate("Dialog", "ОК"))
         self.label_9.setText(_translate("Dialog", "Тип изделия"))
+        self.label_10.setText(_translate("Dialog", "Плотность"))
+        self.label_11.setText(_translate("Dialog", "Тип бумаги"))
 
 
 if __name__ == "__main__":
