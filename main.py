@@ -1,6 +1,7 @@
 import sys
 import connection
 import generator
+import openpyxl
 from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog, QTableWidgetItem
 
 from DeleteClass import DeleteData
@@ -177,7 +178,7 @@ class PrintTable(QMainWindow):
         self.cursor = connection.connection.cursor()
         query = 'SELECT name, date_start FROM "Order" ' \
                 'INNER JOIN "Customer" ON "Customer".id = "Order".client ' \
-                'WHERE date_start < \'01.01.2000\''
+                'WHERE date_start < \'15.07.2022\''
         self.cursor.execute(query)
         self.rows = self.cursor.fetchall()
         self.tableWidget.setRowCount(len(self.rows))
@@ -405,6 +406,23 @@ class AdminWindow(PrintTable, AdminWindow.Ui_MainWindow):
         self.generate_prod_type.clicked.connect(self.to_generate_prod_type)
         self.generate_density.clicked.connect(self.to_generate_density)
         self.generate_paper.clicked.connect(self.to_generate_paper_type)
+        self.excel.clicked.connect(self.export)
+
+    def export(self):
+        self.cursor = connection.connection.cursor()
+        book = openpyxl.Workbook()
+        sheet = book.active
+        self.cursor.execute('SELECT name, COUNT("Order".id) AS total_orders FROM "Customer" LEFT JOIN "Order" ON "Order".client = "Customer".id GROUP BY name ORDER BY total_orders DESC')
+        results = self.cursor.fetchall()
+        i = 0
+        for row in results:
+            i += 1
+            j = 1
+            for col in row:
+                cell = sheet.cell(row=i, column=j)
+                cell.value = col
+                j += 1
+        book.save("Q_3_9_1.xlsx")
 
     def to_add_customer(self):
         client = AddClient()
