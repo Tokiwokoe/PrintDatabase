@@ -52,14 +52,16 @@ class PrintTable(QMainWindow):
 
     def to_print_product(self):
         self.cursor = connection.connection.cursor()
-        query = 'SELECT publication, list_count, calculation, price, "ProductType".product FROM "Product" ' \
+        query = 'SELECT publication, list_count, calculation, price, "ProductType".product, "Density".density, "PaperType".type FROM "Product" ' \
                 'LEFT JOIN "ProductType" ON "ProductType".id = "Product".type ' \
+                'LEFT JOIN "Density" ON "Density".id = "Product".density ' \
+                'LEFT JOIN "PaperType" ON "PaperType".id = "Product".paper_type ' \
                 'ORDER BY "Product".id'
         self.cursor.execute(query)
         self.rows = self.cursor.fetchall()
         self.tableWidget.setRowCount(len(self.rows))
-        self.tableWidget.setColumnCount(5)
-        self.labels = ['Название изделия', 'Количество страниц', 'Тираж', 'Цена за экземпляр', 'Тип изделия']
+        self.tableWidget.setColumnCount(7)
+        self.labels = ['Название изделия', 'Количество страниц', 'Тираж', 'Цена за экземпляр', 'Плостность бумаги', 'Тип бумаги', 'Тип изделия']
         self.tableWidget.setHorizontalHeaderLabels(self.labels)
         self.to_print_table()
 
@@ -352,7 +354,7 @@ class AdminWindow(PrintTable, AdminWindow.Ui_MainWindow):
         self.Print_print.clicked.connect(self.to_print_print)
         self.Print_customer.clicked.connect(self.to_print_customer)
         self.Print_product.clicked.connect(self.to_print_product)
-        self.Print_format.clicked.connect(self.to_print_format)
+        self.Print_density.clicked.connect(self.to_print_format)
         self.Print_dist.clicked.connect(self.to_print_dist)
         self.Print_order.clicked.connect(self.to_print_order)
         self.Print_prop.clicked.connect(self.to_print_prop)
@@ -377,19 +379,19 @@ class AdminWindow(PrintTable, AdminWindow.Ui_MainWindow):
         self.add_dist.clicked.connect(self.to_add_dist)
         self.add_prop.clicked.connect(self.to_add_prop)
         self.add_print.clicked.connect(self.to_add_print)
-        self.add_format.clicked.connect(self.to_add_format)
+        self.add_density.clicked.connect(self.to_add_format)
         self.add_order.clicked.connect(self.to_add_order)
         self.add_product.clicked.connect(self.to_add_product)
         self.add_prod_type.clicked.connect(self.to_add_prod_type)
         self.DeleteButton.clicked.connect(self.to_delete)
         self.generate_customer.clicked.connect(self.to_generate_customer)
-        self.Generate_print.clicked.connect(self.to_generate_print)
+        self.generate_print.clicked.connect(self.to_generate_print)
         self.generate_product.clicked.connect(self.to_generate_product)
         self.generate_dist.clicked.connect(self.to_generate_dist)
         self.generate_prop.clicked.connect(self.to_generate_prop)
         self.generate_order.clicked.connect(self.to_generate_order)
-        self.generate_format.clicked.connect(self.to_generate_format)
         self.generate_prod_type.clicked.connect(self.to_generate_prod_type)
+        self.generate_density.clicked.connect(self.to_generate_density)
 
     def to_add_customer(self):
         client = AddClient()
@@ -462,7 +464,55 @@ class AdminWindow(PrintTable, AdminWindow.Ui_MainWindow):
             self.gen_label.setText('Ошибка')
 
     def to_generate_product(self):
-        pass
+        self.cursor = connection.connection.cursor()
+        query = 'SELECT id FROM "Product" ORDER BY id DESC LIMIT 1'
+        self.cursor.execute(query)
+        self.id = self.cursor.fetchone()
+        query = 'SELECT id FROM "Density" ORDER BY id DESC LIMIT 1'
+        self.cursor.execute(query)
+        self.density = self.cursor.fetchone()
+        query = 'SELECT id FROM "PaperType" ORDER BY id DESC LIMIT 1'
+        self.cursor.execute(query)
+        self.paper = self.cursor.fetchone()
+        query = 'SELECT id FROM "ProductType" ORDER BY id DESC LIMIT 1'
+        self.cursor.execute(query)
+        self.type = self.cursor.fetchone()
+        try:
+            query = generator.generate_product(self.id, self.density, self.paper, self.type)
+            self.cursor.execute(query)
+            connection.connection.commit()
+            self.gen_label.setText('Генерация изделий завершена')
+        except Exception as err:
+            print(err)
+            self.gen_label.setText('Ошибка')
+
+    def to_generate_density(self):
+        self.cursor = connection.connection.cursor()
+        query = 'SELECT id FROM "Density" ORDER BY id DESC LIMIT 1'
+        self.cursor.execute(query)
+        self.id = self.cursor.fetchone()
+        try:
+            query = generator.generate_density(self.id)
+            self.cursor.execute(query)
+            connection.connection.commit()
+            self.gen_label.setText('Генерация плотности бумаги завершена')
+        except Exception as err:
+            print(err)
+            self.gen_label.setText('Ошибка')
+
+    def to_generate_paper_type(self):
+        self.cursor = connection.connection.cursor()
+        query = 'SELECT id FROM "PaperType" ORDER BY id DESC LIMIT 1'
+        self.cursor.execute(query)
+        self.id = self.cursor.fetchone()
+        try:
+            query = generator.generate_paper_type(self.id)
+            self.cursor.execute(query)
+            connection.connection.commit()
+            self.gen_label.setText('Генерация типа бумаги завершена')
+        except Exception as err:
+            print(err)
+            self.gen_label.setText('Ошибка')
 
     def to_generate_dist(self):
         self.cursor = connection.connection.cursor()
@@ -479,16 +529,35 @@ class AdminWindow(PrintTable, AdminWindow.Ui_MainWindow):
             self.gen_label.setText('Ошибка')
 
     def to_generate_prop(self):
-        pass
+        self.cursor = connection.connection.cursor()
+        query = 'SELECT id FROM "PropertyType" ORDER BY id DESC LIMIT 1'
+        self.cursor.execute(query)
+        self.id = self.cursor.fetchone()
+        try:
+            query = generator.generate_prop(self.id)
+            self.cursor.execute(query)
+            connection.connection.commit()
+            self.gen_label.setText('Генерация собственности завершена')
+        except Exception as err:
+            print(err)
+            self.gen_label.setText('Ошибка')
 
     def to_generate_order(self):
         pass
 
-    def to_generate_format(self):
-        pass
-
     def to_generate_prod_type(self):
-        pass
+        self.cursor = connection.connection.cursor()
+        query = 'SELECT id FROM "ProductType" ORDER BY id DESC LIMIT 1'
+        self.cursor.execute(query)
+        self.id = self.cursor.fetchone()
+        try:
+            query = generator.generate_prod_type(self.id)
+            self.cursor.execute(query)
+            connection.connection.commit()
+            self.gen_label.setText('Генерация собственности завершена')
+        except Exception as err:
+            print(err)
+            self.gen_label.setText('Ошибка')
 
 
 # Запуск программы
