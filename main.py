@@ -556,7 +556,24 @@ class AdminWindow(PrintTable, AdminWindow.Ui_MainWindow):
             self.gen_label.setText('Ошибка')
 
     def to_generate_order(self):
-        pass
+        self.cursor = connection.connection.cursor()
+        query = 'SELECT id FROM "Order" ORDER BY id DESC LIMIT 1'
+        self.cursor.execute(query)
+        self.id = self.cursor.fetchone()
+        query = 'SELECT id FROM "Customer" ORDER BY id DESC LIMIT 1'
+        self.cursor.execute(query)
+        self.cust = self.cursor.fetchone()
+        query = 'SELECT id FROM "Product" ORDER BY id DESC LIMIT 1'
+        self.cursor.execute(query)
+        self.prod = self.cursor.fetchone()
+        try:
+            query = generator.generate_order(self.id, self.cust, self.prod)
+            self.cursor.execute(query)
+            connection.connection.commit()
+            self.gen_label.setText('Генерация изделий завершена')
+        except Exception as err:
+            print(err)
+            self.gen_label.setText('Ошибка')
 
     def to_generate_prod_type(self):
         self.cursor = connection.connection.cursor()

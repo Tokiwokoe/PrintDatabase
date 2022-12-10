@@ -74,7 +74,7 @@ def generate_paper_type(id):
 
 def generate_dist(id):
     data = 'INSERT INTO "District" VALUES '
-    for i in range(10000):  # генерация названия
+    for i in range(10000):  # генерация района
         data = data + f'({id[0] + i + 1}, \'{random.choice(dist)}\')'
         if i != 9999:
             data = data + ', '
@@ -83,7 +83,7 @@ def generate_dist(id):
 
 def generate_prop(id):
     data = 'INSERT INTO "PropertyType" VALUES '
-    for i in range(10000):  # генерация названия
+    for i in range(10000):  # генерация типа собственности
         data = data + f'({id[0] + i + 1}, \'{random.choice(prop)}\')'
         if i != 9999:
             data = data + ', '
@@ -92,8 +92,17 @@ def generate_prop(id):
 
 def generate_prod_type(id):
     data = 'INSERT INTO "ProductType" VALUES '
-    for i in range(10000):  # генерация названия
+    for i in range(10000):  # генерация типа изделия
         data = data + f'({id[0] + i + 1}, \'{random.choice(prod_type)}\')'
+        if i != 9999:
+            data = data + ', '
+    return data
+
+
+def generate_order(id, cust, prod):
+    data = 'INSERT INTO "Order" VALUES '
+    for i in range(10000):  # генерация даты (старт), даты (план), даты (факт), цены, клиента, изделия соответственно
+        data = data + f'({id[0] + i + 1}, \'0{random.randrange(1, 9)}.0{random.randrange(1, 5)}.2022\', \'{random.randrange(10, 28)}.0{random.randrange(5, 9)}.2022\', \'{random.randrange(10, 28)}.0{random.randrange(5, 9)}.2022\', \'{random.randrange(500, 10000)}\', {random.randrange(1, cust[0])}, {random.randrange(1, prod[0])})'
         if i != 9999:
             data = data + ', '
     return data
