@@ -499,7 +499,7 @@ class Ui_MainWindow(object):
 "background-color: rgb(245, 245, 245)")
         self.excel.setObjectName("excel")
         self.gen_label = QtWidgets.QLabel(self.centralwidget)
-        self.gen_label.setGeometry(QtCore.QRect(10, 480, 581, 31))
+        self.gen_label.setGeometry(QtCore.QRect(10, 490, 581, 31))
         font = QtGui.QFont()
         font.setPointSize(-1)
         font.setBold(False)

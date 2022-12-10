@@ -61,18 +61,29 @@ class PrintTable(QMainWindow):
         self.rows = self.cursor.fetchall()
         self.tableWidget.setRowCount(len(self.rows))
         self.tableWidget.setColumnCount(7)
-        self.labels = ['Название изделия', 'Количество страниц', 'Тираж', 'Цена за экземпляр', 'Плостность бумаги', 'Тип бумаги', 'Тип изделия']
+        self.labels = ['Название изделия', 'Количество страниц', 'Тираж', 'Цена за экземпляр', 'Тип изделия', 'Тип бумаги', 'Плостность бумаги']
         self.tableWidget.setHorizontalHeaderLabels(self.labels)
         self.to_print_table()
 
     def to_print_format(self):
         self.cursor = connection.connection.cursor()
-        query = 'SELECT paper_type, density FROM "PaperFormat" ORDER BY "PaperFormat".id'
+        query = 'SELECT density FROM "Density" ORDER BY "Density".id'
         self.cursor.execute(query)
         self.rows = self.cursor.fetchall()
         self.tableWidget.setRowCount(len(self.rows))
-        self.tableWidget.setColumnCount(2)
-        self.labels = ['Тип бумаги', 'Плотность бумаги']
+        self.tableWidget.setColumnCount(1)
+        self.labels = ['Плотность бумаги']
+        self.tableWidget.setHorizontalHeaderLabels(self.labels)
+        self.to_print_table()
+
+    def to_print_paper(self):
+        self.cursor = connection.connection.cursor()
+        query = 'SELECT type FROM "PaperType" ORDER BY "PaperType".id'
+        self.cursor.execute(query)
+        self.rows = self.cursor.fetchall()
+        self.tableWidget.setRowCount(len(self.rows))
+        self.tableWidget.setColumnCount(1)
+        self.labels = ['Тип бумаги']
         self.tableWidget.setHorizontalHeaderLabels(self.labels)
         self.to_print_table()
 
@@ -355,6 +366,7 @@ class AdminWindow(PrintTable, AdminWindow.Ui_MainWindow):
         self.Print_customer.clicked.connect(self.to_print_customer)
         self.Print_product.clicked.connect(self.to_print_product)
         self.Print_density.clicked.connect(self.to_print_format)
+        self.Print_density_2.clicked.connect(self.to_print_paper)
         self.Print_dist.clicked.connect(self.to_print_dist)
         self.Print_order.clicked.connect(self.to_print_order)
         self.Print_prop.clicked.connect(self.to_print_prop)
@@ -392,6 +404,7 @@ class AdminWindow(PrintTable, AdminWindow.Ui_MainWindow):
         self.generate_order.clicked.connect(self.to_generate_order)
         self.generate_prod_type.clicked.connect(self.to_generate_prod_type)
         self.generate_density.clicked.connect(self.to_generate_density)
+        self.generate_paper.clicked.connect(self.to_generate_paper_type)
 
     def to_add_customer(self):
         client = AddClient()

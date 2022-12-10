@@ -47,7 +47,7 @@ def generate_customer(id):
 def generate_product(id, density, paper, type):
     data = 'INSERT INTO "Product" VALUES '
     for i in range(10000):  # генерация кол-ва страниц, тиража, цены, названия, плотности бумаги, типа бумаги, типа изделия соответственно
-        data = data + f'({id[0] + i + 1}, \'{random.randrange(10, 1000)} {random.randrange(100, 1000000)}\', \'{random.randrange(50, 2000)}\', ' \
+        data = data + f'({id[0] + i + 1}, \'{random.randrange(10, 1000)}\', \'{random.randrange(100, 1000000)}\', \'{random.randrange(50, 2000)}\', ' \
                       f'\'{random.choice(publication)}\', {random.randrange(1, density[0])}, {random.randrange(1, paper[0])}, {random.randrange(1, type[0])})'
         if i != 9999:
             data = data + ', '
@@ -70,6 +70,7 @@ def generate_paper_type(id):
         if i != 9999:
             data = data + ', '
     return data
+
 
 def generate_dist(id):
     data = 'INSERT INTO "District" VALUES '
